@@ -82,7 +82,7 @@ The stable-headquarters subsample contains 519,090 firm-months and 6,081 firms. 
 \section{Within-retail IV-decile decomposition: full table}
 \label{ia:ivdecile}
 
-Section~\ref{sec:withinretail} of the main paper summarizes the IV-decile decomposition of the within-retail wrong-signed literacy gradient on the persistent measure (five positive deciles, five negative; observation-weighted average $+0.0002$). This section reports the full table with within-decile state and permno counts.
+Section~\ref{sec:robust_battery} of the main paper summarizes the IV-decile decomposition of the within-retail wrong-signed literacy gradient on the persistent measure (five positive deciles, five negative; observation-weighted average $+0.0002$). This section reports the full table with within-decile state and permno counts.
 
 \begin{table}[h]
 \centering
@@ -140,7 +140,7 @@ On the static-snapshot full panel, both the low-IO and mid-IO terciles deliver s
 \section{PIT mid-IO under the literacy reassignment}
 \label{ia:pitmidio}
 
-For completeness, the PIT-literacy version of the mid-IO concentration table is reported here. Section~\ref{sec:mech-bounds} of the main paper engages the magnitude collapse.
+For completeness, the PIT-literacy version of the mid-IO concentration table is reported here. Section~\ref{sec:robust_pit} of the main paper engages the magnitude collapse.
 
 \begin{table}[h]
 \centering
@@ -197,7 +197,7 @@ IO bin & IO percentile range & IO share mean & Conditional three-way slope \\
 \end{tabular}
 
 \medskip
-{\footnotesize\textit{Notes.} Within each persistent-IO percentile bin on the full panel, the residualized three-way slope is the within-bin OLS slope of $r_{i,s,t}$ on the standardized $\mathrm{mom}\times\mathrm{IV}\times\mathtt{literacy\_z}$ term after residualizing on the lower-order interactions, state fixed effects, and month fixed effects. Bin 6 (bold) is the most-negative bin (IO share mean 0.244), approximately ten percentage points below the parametric quadratic-IO trough $\mathrm{IO}^{\ast} \approx 0.34$ of Table~\ref{tab:headline_quadratic} of the main paper; bin 17 (IO share mean 0.696) is the most-positive bin.}
+{\footnotesize\textit{Notes.} Within each persistent-IO percentile bin on the full panel, the residualized three-way slope is the within-bin OLS slope of $r_{i,s,t}$ on the standardized $\mathrm{mom}\times\mathrm{IV}\times\mathtt{literacy\_z}$ term after residualizing on the lower-order interactions, state fixed effects, and month fixed effects. Bin 6 (bold) is the most-negative bin (IO share mean 0.244), approximately ten percentage points below the parametric quadratic-IO trough $\mathrm{IO}^{\ast} \approx 0.34$ of Section~\ref{sec:quadratic} of the main paper; bin 17 (IO share mean 0.696) is the most-positive bin.}
 \end{table}
 
 The most-negative bin lies at IO percentile 25--30 (IO share mean 0.244), below the parametric quadratic trough at $\mathrm{IO}^{\ast} \approx 0.34$. The 20-bin diagnostic is non-parametric corroboration of an interior minimum but does not match the parametric trough location precisely; the average over the two endpoint bins is $+0.00004$ (zero), and the mildly positive bins above IO percentile 80 are consistent with a U-shape opening upward.
@@ -232,7 +232,7 @@ Monthly return                  & $-0.0073$ (0.051) & $+0.0102$ (0.056)  & $-0.0
 
 Relocators are systematically smaller (market cap roughly 60 percent of stable-HQ), higher-IV (idiosyncratic volatility z-score 3.6 times larger), more negative-momentum, lower-IO, lower-return, and from slightly lower-literacy states. Every characteristic differs at $t > 4$. The systematic selection is consistent with relocators being firms whose corporate-strategy decisions (including headquarters moves) place them in a different segment of the cross-section than the community-anchored, larger, lower-IV firms that constitute the stable-HQ population. The relocator profile is plausibly mechanism-relevant: smaller, high-IV, lower-literacy-state firms whose corporate-strategy headquarters changes are themselves correlated with the local-anchored channel breaking down.
 
-Section~\ref{sec:relocator} of the main paper engages the relocator decomposition of the headline mid/low ratio; Section~\ref{sec:mech-bounds} engages the PIT-vs-stable-HQ magnitude collapse on the mid-IO coefficient and notes that the design does not separate the mechanism-strength reading from the sample-selection reading.
+Section~\ref{sec:relocator} of the main paper engages the relocator decomposition of the headline mid/low ratio; Section~\ref{sec:robust_pit} engages the PIT-vs-stable-HQ magnitude collapse on the mid-IO coefficient and notes that the design does not separate the mechanism-strength reading from the sample-selection reading.
 
 \section{Refined-relocator stable-headquarters extension}
 \label{ia:refinedreloc}
@@ -272,7 +272,7 @@ Drop calendar-2009 and 2020        & $-0.0121$ & $-2.58$ (CGM)       & --- \\
 \section{Subsample stability: full five-window grid}
 \label{ia:subsample}
 
-Table~\ref{tab:prepost} of the main paper reports the pre-2015 and post-2015 split (Panels A and B). This section reports the full five-window grid for the headline Fama-MacBeth estimator on the static-snapshot full panel.
+Table~\ref{tab:prepost_grad} (Section~\ref{ia:prepost}) reports the pre-2015 and post-2015 split. This section reports the full five-window grid for the headline Fama-MacBeth estimator on the static-snapshot full panel.
 
 \begin{table}[h]
 \centering
@@ -354,7 +354,7 @@ The mid-HHI/low-HHI ratio is $0.46$, very different from the mid-IO/low-IO ratio
 \section{Classical errors-in-variables: per-wave reliability detail}
 \label{ia:eiv}
 
-Section~\ref{sec:robust-eiv} of the main paper reports the firm-month-weighted reliability ratio $\lambda = 0.420$ and the EIV-corrected mid-IO coefficient. Table~\ref{tab:eiv_ia} reports the per-wave reliability ratios.
+Section~\ref{sec:discussion} of the main paper reports the firm-month-weighted reliability ratio $\lambda = 0.420$ and the EIV-corrected mid-IO coefficient. Table~\ref{tab:eiv_ia} reports the per-wave reliability ratios.
 
 \begin{table}[h]
 \centering
@@ -403,14 +403,14 @@ Before WRDS access to the Thomson Reuters s34 panel was available, an earlier dr
 \section{Within-retail literacy-gradient detail}
 \label{ia:withinretail}
 
-This section records the detail behind the within-retail literacy gradient of Section~\ref{sec:withinretail} of the main paper. On the persistent IO measure of the stable-headquarters subsample, within the low-IO tercile: $\hat\gamma$ in high-literacy states is $+0.0060$ (state-clustered $t = +0.32$, $n = 88{,}034$, 25 states); $\hat\gamma$ in low-literacy states is $+0.0094$ ($t = +0.71$, $n = 56{,}955$, 25 states); the stacked low-literacy-minus-high-literacy DIFF is $+0.0033$ (state-clustered $t = +2.80$, wild-cluster bootstrap $p = 0.024$, 95-percent studentized interval $[+0.00044, +0.00599]$, $B = 4{,}999$).
+This section records the detail behind the within-retail literacy gradient of Section~\ref{sec:robust_battery} of the main paper. On the persistent IO measure of the stable-headquarters subsample, within the low-IO tercile: $\hat\gamma$ in high-literacy states is $+0.0060$ (state-clustered $t = +0.32$, $n = 88{,}034$, 25 states); $\hat\gamma$ in low-literacy states is $+0.0094$ ($t = +0.71$, $n = 56{,}955$, 25 states); the stacked low-literacy-minus-high-literacy DIFF is $+0.0033$ (state-clustered $t = +2.80$, wild-cluster bootstrap $p = 0.024$, 95-percent studentized interval $[+0.00044, +0.00599]$, $B = 4{,}999$).
 
 On the time-varying IO measure of the stable-headquarters subsample, within the low-IO tercile: $\hat\gamma$ in high-literacy states is $+0.0054$ ($t = +0.34$, $n = 87{,}354$, 26 states); $\hat\gamma$ in low-literacy states is $+0.0090$ ($t = +0.75$, $n = 53{,}775$, 25 states); the stacked DIFF is $+0.0029$ ($t = +2.00$, wild-cluster bootstrap $p = 0.093$, 95-percent studentized interval $[-0.0006, +0.0063]$).
 
 \section{Median-split tie-resolution rule and within-tercile cluster counts}
 \label{ia:medsplit}
 
-The within-retail literacy split summarized in Section~\ref{sec:withinretail} of the main paper splits the low-IO tercile of the stable-HQ subsample at the within-tercile state-mean literacy median. The state-mean literacy distribution at the within-tercile level is uneven, and Panel A and Panel B return 25/25 and 26/25 state assignments respectively because the time-varying IO measure draws a slightly different set of state-firm cells into the low-IO tercile than the persistent IO measure. The tie-resolution rule assigns the within-tercile median state to the high-literacy group: this is a one-state asymmetry favoring the high-literacy panel by an additional state-cluster. The wild-cluster bootstrap on the within-retail DIFF is computed within each panel's state-cluster count without an across-panel adjustment. The robustness of the wild-cluster bootstrap to small differences in cluster count is established in the Cameron-Gelbach-Miller (2008) Monte Carlo simulations: at 49-50 clusters, the test size remains close to nominal under Webb six-point weights and the null imposed.
+The within-retail literacy split summarized in Section~\ref{sec:robust_battery} of the main paper splits the low-IO tercile of the stable-HQ subsample at the within-tercile state-mean literacy median. The state-mean literacy distribution at the within-tercile level is uneven, and Panel A and Panel B return 25/25 and 26/25 state assignments respectively because the time-varying IO measure draws a slightly different set of state-firm cells into the low-IO tercile than the persistent IO measure. The tie-resolution rule assigns the within-tercile median state to the high-literacy group: this is a one-state asymmetry favoring the high-literacy panel by an additional state-cluster. The wild-cluster bootstrap on the within-retail DIFF is computed within each panel's state-cluster count without an across-panel adjustment. The robustness of the wild-cluster bootstrap to small differences in cluster count is established in the Cameron-Gelbach-Miller (2008) Monte Carlo simulations: at 49-50 clusters, the test size remains close to nominal under Webb six-point weights and the null imposed.
 
 \section{Difference-in-differences secondary design: full diagnostic stack}
 \label{ia:did}
@@ -442,6 +442,143 @@ Drop FL (control-set change under 5-year lag)       & $+0.0717$ & $+2.91$ & 0.09
 \end{table}
 
 I do not report the modern-DiD diagnostic stack \citep{goodmanBacon2021, callawaySantanna2021, rambachanRoth2023} on this design: the cross-sectional headline does not lean on the DiD for identification, and the design does not identify the confound class that explains the $+0.073$ either way; running the modern-DiD diagnostics would not bear on the cross-sectional contribution.
+
+\section{Functional-form grid for the quadratic-IO U-shape}
+\label{ia:formgrid}
+
+Section~\ref{sec:robustness} of the main paper reports that the continuous-margin quadratic-IO five-percent clearance ($\hat\gamma_{5} = +0.0151$, $p = 0.017$) does not survive alternative functional forms. Table~\ref{tab:formgrid_ia} reports the grid; the corroborating 20-bin conditional-mean characterization is Section~\ref{ia:quadbins}.
+
+\begin{table}[h]
+\centering
+\caption{Functional-form grid: the quadratic five-percent clearance is parametric}
+\label{tab:formgrid_ia}
+\footnotesize
+\begin{tabular}{lcccr}
+\toprule
+Specification & Focal term & Coef & State-$t$ & wcb $p$ \\
+\midrule
+\textbf{Quadratic (corroborating)} & $\gamma$ on IO$^{2}$ & $\mathbf{+0.0151}$ & $\mathbf{+2.28}$ & $\mathbf{0.017}$ \\
+Cubic & $\gamma$ on IO$^{3}$ & $+0.798$ & $+1.70$ & 0.133 \\
+Log-IO & $\gamma$ on $\log(\mathrm{IO})$ & $-0.00243$ & $-0.35$ & 0.748 \\
+Kink-IO at 0.30 & kink coef & $+0.179$ & $+1.19$ & 0.242 \\
+20-bin diagnostic & conditional means within $\pm 0.003$ of zero & --- & --- & --- \\
+\bottomrule
+\end{tabular}
+
+\medskip
+{\footnotesize\textit{Notes.} Stable-HQ persistent-IO subsample. Each row reports the focal-basis coefficient with state-clustered $t$ and wild-cluster bootstrap $p$. The 20-bin diagnostic partitions persistent IO into 20 quantile bins, residualizes the focal triple's contribution to monthly returns on state and month fixed effects within each bin, and reports the within-bin conditional mean of the demeaned composite. Log-IO returns a coefficient near zero; kink-IO at the empirical minimum delivers neither a kink coefficient nor a separable linear term; the 20-bin conditional means show no monotonic curvature. The five-percent clearance rests on the quadratic functional form alone; the discrete-tercile mid-IO concentration (Table~\ref{tab:headline} of the main paper) is functional-form-free.}
+\end{table}
+
+\section{Instrumental-variables strategy: full first-stage and 2SLS detail}
+\label{ia:ivfirststage}
+
+This section records the detail behind the documented first-stage failure of the K-12 personal-finance-mandate instrument summarized in Section~\ref{sec:robustness} of the main paper. The instrument is state-level exposure to K-12 personal-finance graduation requirements, using the Urban-Schmeiser 2015 database as updated through Burke-Collins-Urban (2023).
+
+\begin{table}[h]
+\centering
+\caption{First-stage diagnostics: NFCS state literacy on mandate exposure}
+\label{tab:fs_iv}
+\footnotesize
+\begin{tabular}{lccc}
+\toprule
+Instrument & Slope & Pearson $r$ & First-stage $F$ \\
+\midrule
+has\_pf\_mandate (ever-treated by 2024) & $-1.31$ & $\mathbf{-0.355}$ & $\mathbf{7.06}$ \\
+early\_pf\_adopter (treated by 2000) & $+0.72$ & $+0.112$ & 0.62 \\
+cohort\_share\_affected & $-0.59$ & $-0.051$ & 0.13 \\
+log\_years\_pf & $-0.27$ & $-0.171$ & 1.47 \\
+\bottomrule
+\end{tabular}
+
+\medskip
+{\footnotesize\textit{Notes.} Cross-state regression of state NFCS literacy (panel mean \%) on each candidate instrument, $n = 51$ states. The strongest candidate (has\_pf\_mandate) has $r = -0.355$ (wrong sign for a positive IV) and $F = 7.06$ (below the Stock-Yogo $F > 10$ threshold). The mandate-literacy correlation is negative because the South and Appalachia (low-literacy regions) adopted mandates as a remedy; the Northeast and Pacific (high-literacy regions) did not. This is reverse causality, not a flaw in the underlying literacy story.}
+\end{table}
+
+\paragraph{Cohort-matched first stage.} The right way to instrument adult literacy with K-12 mandates is to match the mandate window to the affected cohort. NFCS includes age band $\mathtt{A3Ar\_w}$ (six bands: 18--24, 25--34, 35--44, 45--54, 55--64, 65+) in every wave; I constructed a state $\times$ wave $\times$ age-band panel (1{,}530 cells) and computed cohort-specific mandate exposure as the fraction of each band's HS-graduation years that overlap the state's mandate window. Without controls the slope is $-0.106$, $t = -12.9$ --- driven by the confound that younger respondents have both lower literacy and higher cohort exposure. With State + Wave + Band fixed effects, which compare like-aged respondents across states and waves, the slope becomes $+0.002$, $t = +0.22$, partial $F = 0.05$. The cohort-matched instrument is no stronger than the aggregate instrument under the right controls.
+
+\paragraph{2SLS results.} Running 2SLS anyway in the mid-IO size-controlled spec returns standard errors inflated 6--7$\times$ relative to OLS, with all $t$-statistics below 2: $\hat\gamma_{2SLS} = -0.062$ ($t = -0.83$) under share-affected instrument; $\hat\gamma_{2SLS} = -0.071$ ($t = -1.08$) under log-years instrument; $\hat\gamma_{2SLS} = -0.016$ ($t = -0.21$) under has-mandate instrument. Direction is right; precision is destroyed. The OLS estimate $\hat\gamma_{\text{OLS}} = -0.0256$ ($t = -2.24$) remains the preferred inferential statement.
+
+\paragraph{Why the IV fails.} Three forces combine. State mandates are too recent: most adoptions are 2005--2014, so substantial exposure is concentrated in the 18--24 age band only. School-level compliance with state mandates is only $\approx 48\%$ \citep{urban2020}, halving the intent-to-treat exposure. The NFCS Big-Five instrument is a narrow five-question test; mandate-affected cohorts may have higher \textit{broad} financial knowledge but not higher Big-Five scores specifically. The IV strategy is left for future work that can exploit cohort-specific NFCS micro-data on a broader literacy measure.
+
+\section{Pre/post-2015 cross-state literacy gradient by sub-period}
+\label{ia:prepost}
+
+Section~\ref{sec:robustness} of the main paper summarizes the time variation in the cross-state literacy gradient and visualizes it in Figure~\ref{fig:time}. Table~\ref{tab:prepost_grad} reports the gradient by sub-period.
+
+\begin{table}[h]
+\centering
+\caption{Cross-state literacy gradient by sub-period (size-controlled, mid-IO)}
+\label{tab:prepost_grad}
+\footnotesize
+\begin{tabular}{lcccc}
+\toprule
+Period & Weighted slope & state-$t$ & Pearson $r$ & $n_{\text{states}}$ \\
+\midrule
+Pre-2015 (2009--2014) & $+0.0403$ & $+1.89$ & $+0.048$ & 37 \\
+Post-2015 (2015--2023) & $\mathbf{-0.0706}$ & $\mathbf{-3.50}$ & $-0.370$ & 38 \\
+Pooled (2009--2023) & $\mathbf{-0.0623}$ & $\mathbf{-5.01}$ & $-0.275$ & 42 \\
+\midrule
+NFCS Wave 2009 only (2009--2011) & $+0.281$ & $+2.57$ & $+0.109$ & 34 \\
+NFCS Waves 2012--2021 & $-0.114$ & $-1.18$ & $-0.066$ & --- \\
+\bottomrule
+\end{tabular}
+
+\medskip
+{\footnotesize\textit{Notes.} Per-state $\hat\gamma_{\text{lit}}$ from the size-controlled specification (Equation~(2) of the main paper) with month fixed effects only; precision-weighted cross-state regression. States with $\geq 5$ firms in the sample cell. The Wave-2009 row segregates the first NFCS administration, which produced the wrong-signed cross-state gradient driving the entire pre-2015 result; Waves 2012--2021 are directionally negative.}
+\end{table}
+
+\section{Within-mid-IO IV-decile decomposition: full table}
+\label{ia:ivwithinmidio}
+
+Section~\ref{sec:mechanism} of the main paper summarizes the within-mid-IO IV-decile decomposition that rejects the canonical limits-to-arbitrage microfoundation. Table~\ref{tab:iv_within_mid_io} reports the full decile table.
+
+\begin{table}[h]
+\centering
+\caption{Within-mid-IO IV-decile decomposition (persistent IO, stable-HQ, size-controlled)}
+\label{tab:iv_within_mid_io}
+\footnotesize
+\begin{tabular}{lccc}
+\toprule
+IV decile & $\hat\gamma$ (no size ctrl) & $\hat\gamma$ (size-controlled) & $N$ \\
+\midrule
+1 (lowest IV) & $+0.026$ & $+0.068$ & 28,448 \\
+2             & $-0.003$ & $+0.003$ & 23,732 \\
+3             & $+0.266$ ($t=+2.20$) & $+0.267$ ($t=+2.20$) & 21,634 \\
+4             & $-0.119$ & $-0.101$ & 20,435 \\
+5             & $+0.010$ & $+0.019$ & 19,200 \\
+6             & $-0.091$ & $-0.078$ & 18,737 \\
+7             & $\mathbf{-0.279}$ ($\mathbf{t=-2.79}$) & $\mathbf{-0.279}$ ($\mathbf{t=-2.88}$) & 17,684 \\
+8             & $-0.119$ & $-0.113$ & 16,315 \\
+9             & $-0.009$ & $+0.011$ & 14,113 \\
+10 (highest IV) & $-0.045$ & $-0.035$ & 11,291 \\
+\midrule
+Joint $\chi^{2}(9)$ equality test & $p = 0.94$ & --- & --- \\
+Spearman $\rho$(decile, $\hat\gamma$) & --- & $-0.67$ ($p = 0.033$) & --- \\
+\bottomrule
+\end{tabular}
+
+\medskip
+{\footnotesize\textit{Notes.} Each row is $\hat\gamma$ on $\mathrm{mom}\times\mathrm{IV}\times\mathtt{literacy\_z}$ within mid-IO restricted to the within-month NYSE IV decile, on the stable-HQ subsample. State and month fixed effects throughout; permno-clustered $t$. The size-controlled column adds the four size-moderation controls. The joint chi-square equality test is the headline-spec test; the Spearman correlation summarizes the within-decile pattern under the size-controlled spec. Decile 10 (highest IV) is not significant, contradicting the canonical limits-to-arbitrage prediction of a strongest effect at the highest IV.}
+\end{table}
+
+\section{Cross-state gradient and time-variation figures}
+\label{ia:gradfigs}
+
+These figures accompany the cross-state gradient of Section~\ref{sec:results} and the time-variation discussion of Section~\ref{sec:robustness} of the main paper.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{figures/punchline_size_controlled.png}
+\caption{Cross-state literacy gradient under the size-controlled specification, full-panel mid-IO sample (left) and after dropping micro-caps (right). Point size $\propto \sqrt{n_{\text{firms}}}$; line is the precision-weighted slope.}
+\label{fig:cross_state}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{figures/figure3_time.png}
+\caption{Time variation in the headline finding. Panel A: rolling 5-year-window mid-IO three-way coefficient is negative in every window. Panel B: cross-state literacy gradient by sub-period --- pre-2015 cells are wrong-signed, post-2015 cells are right-signed. Panel C: size-filter migration heatmap by sub-period.}
+\label{fig:time}
+\end{figure}
 
 \bibliographystyle{plainnat}
 \IfFileExists{references.bib}{\bibliography{references}}{}

@@ -13,6 +13,16 @@
 \usepackage{setspace}
 \doublespacing
 
+% Float-packing parameters: let LaTeX place more tables/figures per page and
+% avoid near-empty dedicated float pages. Typographic only — no change to font
+% size or line spacing.
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.85}
+\renewcommand{\textfraction}{0.1}
+\renewcommand{\floatpagefraction}{0.75}
+\setcounter{topnumber}{4}
+\setcounter{totalnumber}{6}
+
 % Cross-document references to the Internet Appendix (conditional — only if aux exists)
 \usepackage{xr}
 \IfFileExists{../appendix/internet_appendix.aux}{\externaldocument{../appendix/internet_appendix}}{}

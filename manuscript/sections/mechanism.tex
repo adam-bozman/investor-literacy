@@ -1,77 +1,29 @@
 \section{Mechanism: The Interaction-Zone Characterization}
 \label{sec:mechanism}
 
-Section~\ref{sec:results} documented four facts that, taken together, identify a coherent economic interpretation. First, on the stable-HQ subsample the literacy moderation of the momentum--IV anomaly concentrates in mid-IO firms (size-controlled $\hat\gamma_{\text{mid}} = -0.0256$, $t = -2.24$). Second, mid-IO firms are predominantly mid-cap firms; dropping the bottom 50 percent of firms by market cap relocates the moderation to low-IO ($\hat\gamma_{\text{IO1}} = -0.0441$, $t = -2.04$ in the above-median sample). Third, the per-state coefficient correlates with state literacy at $r = -0.28$ in the full-panel mid-IO cell and at $r = -0.29$ in the above-median IO1 cell; the high-IO tercile shows no cross-state gradient ($r = -0.07$). Fourth, the within-mid-IO IV-decile decomposition fails to reject equality across deciles ($\chi^{2}\;p = 0.94$ persistent), and decile 10 returns $\hat\gamma \approx 0$. This section develops the interaction-zone characterization those four facts identify and discusses what the design does and does not separate.
+Section~\ref{sec:results} documented four facts: the moderation concentrates in mid-IO ($\hat\gamma_{\text{mid}} = -0.0256$, $t = -2.24$); it relocates to low-IO when the bottom 50 percent of firms by market cap are dropped ($\hat\gamma_{\text{IO1}} = -0.0441$, $t = -2.04$); the per-state coefficient tracks state literacy in the cell that carries the moderation ($r = -0.28$ full-panel mid-IO, $r = -0.29$ above-median IO1) but not in high-IO ($r = -0.07$); and the within-mid-IO IV-decile decomposition fails to reject decile equality ($\chi^2\,p = 0.94$), with decile 10 $\approx 0$. This section develops the interaction-zone characterization those facts identify and discusses what the design does and does not separate.
 
 \subsection{The interaction-zone reading}
 \label{sec:zone}
 
-The literacy moderation lives in the population of firms where two conditions hold simultaneously: retail demand is large enough to move prices, and institutional activity is sufficient to translate that demand into return differences. Where neither retail demand nor institutional activity is meaningful (micro-cap firms held mostly by retail with no institutional counterparty arbitraging mispricing), the literacy-modulated retail behavior generates persistent mispricing that does not translate cleanly into cross-state return variation; literacy varies, but the price differentials don't load on it. Where institutions dominate (large-cap firms with high IO), institutional arbitrage absorbs whatever retail demand exists and neutralizes the local-state channel; literacy varies, but the institutional marginal investor doesn't.
-
-The interaction zone is the union of mid-cap firms with mixed retail/institutional ownership: enough retail to make state-level retail behavior pricing-relevant, enough institutional activity to translate that behavior into return differences that can be detected across states. Under the full-panel size composition, this zone falls predominantly in the mid-IO tercile (because mid-IO firms are predominantly mid-cap, the segment with mixed ownership at typical market sizes). Under the above-median size composition, the zone migrates to the low-IO tercile (because the panel now consists of large firms, and ``low IO'' among large firms means retail-tilted within the still-substantial market segment).
-
-The within-panel migration in Table~\ref{tab:migration} Panel A and the cross-state migration in Panel B trace this interpretation cell by cell. The high-IO null across both sample compositions ($\hat\gamma_{\text{IO3}}$ within-panel and the high-IO cross-state slope) is the predicted-null check the interaction-zone reading passes. The IV-decile null within mid-IO (Section~\ref{sec:mech_iv_decile}) is consistent: a size-and-ownership channel does not predict IV-monotonicity, only firm-size and ownership conditioning, and the data confirm the IV-decile margin is the wrong place to look.
+The moderation lives where two conditions hold at once: retail demand large enough to move prices, and institutional activity sufficient to translate that demand into cross-state return differences. Where neither holds (micro-caps held mostly by retail), mispricing accumulates but does not load on cross-state literacy variation; where institutions dominate (large high-IO firms), arbitrage absorbs retail demand and the marginal investor is not a local trader. The interaction zone --- mid-cap firms with mixed ownership --- is where both hold. Its IO label is sample-conditional: under the full-panel size composition it falls in mid-IO (mid-IO firms being predominantly mid-cap), and under the above-median composition it migrates to low-IO (``low IO'' among large firms meaning retail-tilted at substantial size). Table~\ref{tab:migration} traces this cell by cell; the high-IO null under both compositions is the predicted-null check the reading passes, and the IV-decile null within mid-IO (Section~\ref{sec:mech_iv_decile}) is consistent, since a size-and-ownership channel predicts no IV-monotonicity.
 
 \subsection{What the IV-decile null rules out}
 \label{sec:mech_iv_decile}
 
-The canonical microfoundation in the limits-to-arbitrage literature \citep{shleiferVishny1997, pontiff2006} predicts that arbitrage costs scale with idiosyncratic risk, so literacy-modulated retail demand should displace more mispricing where arbitrage is more expensive. Within mid-IO, the IV-decile decomposition (Table~\ref{tab:iv_within_mid_io}) tests this prediction directly.
-
-\begin{table}[t]
-\centering
-\caption{Within-mid-IO IV-decile decomposition (persistent IO, stable-HQ, size-controlled)}
-\label{tab:iv_within_mid_io}
-\footnotesize
-\begin{minipage}{\textwidth}
-\centering
-\begin{tabular}{lccc}
-\toprule
-IV decile & $\hat\gamma$ (no size ctrl) & $\hat\gamma$ (size-controlled) & $N$ \\
-\midrule
-1 (lowest IV) & $+0.026$ & $+0.068$ & 28,448 \\
-2             & $-0.003$ & $+0.003$ & 23,732 \\
-3             & $+0.266$ (\hspace{0.05em}$t=+2.20$\hspace{0.05em}) & $+0.267$ (\hspace{0.05em}$t=+2.20$\hspace{0.05em}) & 21,634 \\
-4             & $-0.119$ & $-0.101$ & 20,435 \\
-5             & $+0.010$ & $+0.019$ & 19,200 \\
-6             & $-0.091$ & $-0.078$ & 18,737 \\
-7             & $\mathbf{-0.279}$ ($\mathbf{t=-2.79}$) & $\mathbf{-0.279}$ ($\mathbf{t=-2.88}$) & 17,684 \\
-8             & $-0.119$ & $-0.113$ & 16,315 \\
-9             & $-0.009$ & $+0.011$ & 14,113 \\
-10 (highest IV) & $-0.045$ & $-0.035$ & 11,291 \\
-\midrule
-Joint $\chi^{2}(9)$ equality test & $p = 0.94$ (paper) & --- & --- \\
-Spearman $\rho$(decile, $\hat\gamma$) & --- & $-0.67$ ($p = 0.033$) & --- \\
-\bottomrule
-\end{tabular}
-\end{minipage}
-
-\medskip
-{\footnotesize\textit{Notes.} Each row is $\hat\gamma$ on $\mathrm{mom}\times\mathrm{IV}\times\mathtt{literacy\_z}$ within mid-IO restricted to the within-month NYSE IV decile. State and month fixed effects throughout; permno-clustered $t$. The size-controlled column adds the four size-moderation controls. The joint chi-square equality test is the original Table~\ref{tab:headline}-spec test; the Spearman correlation summarizes the broader within-decile pattern under the size-controlled spec.}
-\end{table}
-
-Three readings of the IV-decile evidence. First, decile 10 (highest IV, where the canonical microfoundation predicts strongest effect) returns $\hat\gamma = -0.035$, $t = -1.27$ --- not significant, far from monotone. The canonical reading is rejected. Second, decile 7 carries the largest negative coefficient ($-0.279$, $t = -2.88$), but the pattern across deciles is non-monotone (D3 has $+0.267$). Third, under the joint specification with all decile-specific interactions in one regression, Spearman $\rho(\text{decile}, \hat\gamma_d) = -0.67$ ($p = 0.033$) --- a directional decline in the literacy moderation with IV that wasn't visible decile-by-decile, but with no concentration at the highest IV decile. The IV-decile margin is informative for what it rules out (canonical limits-to-arbitrage) but does not deliver positive identification of the interaction-zone reading. That identification comes from the size-restriction migration of Section~\ref{sec:migration}.
+The canonical microfoundation in the limits-to-arbitrage literature \citep{shleiferVishny1997, pontiff2006} predicts that arbitrage costs scale with idiosyncratic risk, so literacy-modulated retail demand should displace more mispricing where arbitrage is more expensive. Within mid-IO, the within-month NYSE IV-decile decomposition tests this prediction directly (full decile table in IA~\ref{ia:ivwithinmidio}), and rejects it. Decile 10 --- the highest-IV decile, where the canonical microfoundation predicts the strongest effect --- returns $\hat\gamma = -0.035$ ($t = -1.27$), not significant and far from monotone, and a joint equality test across deciles fails to reject ($\chi^2(9)$, $p = 0.94$). The largest negative coefficient sits in decile 7, and the across-decile pattern is non-monotone; under the joint specification the Spearman $\rho(\text{decile}, \hat\gamma_d) = -0.67$ ($p = 0.033$) is a directional decline with IV, but with no concentration at the highest IV decile. The IV-decile margin is informative for what it rules out (canonical limits-to-arbitrage) but does not positively identify the interaction-zone reading; that identification comes from the size-restriction migration of Section~\ref{sec:migration}.
 
 \subsection{High-IO null and college horse-race}
 \label{sec:mech_hi_io}
 
-The high-IO null across the cross-state literacy gradient ($\hat\beta_{\text{IO3}} = +0.018$, $t = +1.22$, Pearson $r = -0.07$) and the predicted-null t-statistic across the Holm step-down family ($p_{\text{FWER}} = 0.996$) is the second confirmatory pattern the interaction-zone reading anticipates. High-IO firms are dominated by institutional investors who are nationally diversified, professionally sophisticated, and indifferent to the headquarters state of their portfolio firms; state-level literacy variation tells us essentially nothing about how the marginal investor in a high-IO stock behaves. Whatever retail demand exists in high-IO firms is small enough to be arbitraged away. The interaction-zone reading therefore predicts a clean null in high-IO, which the data deliver.
-
-A complementary diagnostic is the state college-attainment horse-race within mid-IO. State financial literacy correlates with state college attainment at $\rho = 0.62$, so a purely statistical reading is that the literacy variable is a stand-in for education. The horse-race within mid-IO returns $\hat\gamma_{\text{lit}} = -0.0350$ ($t = -2.97$) and $\hat\gamma_{\text{college}} = +0.00076$ ($t = +0.65$): the literacy three-way sharpens relative to the literacy-only mid-IO baseline of $-0.0321$, and the college three-way is opposite-signed and indistinguishable from zero. Literacy is not a proxy for college attainment within mid-IO.
+The high-IO cross-state null ($\hat\beta_{\text{IO3}} = +0.018$, $t = +1.22$, $r = -0.07$; Holm $p_{\text{FWER}} = 0.996$) is the second confirmatory pattern the reading anticipates: high-IO firms are held by nationally diversified institutions indifferent to headquarters state, so state-level literacy variation says nothing about the marginal investor, and whatever retail demand exists is arbitraged away. Two diagnostics rule out the obvious alternatives. Literacy is not a proxy for education --- a state college-attainment horse-race within mid-IO leaves literacy sharp ($\hat\gamma_{\text{lit}} = -0.0350$, $t = -2.97$) and college null ($+0.00076$, $t = +0.65$) despite a $\rho = 0.62$ state-level correlation --- and the mid-IO concentration is not a variance artifact (mid-IO has lower identifying variation than low-IO yet a larger slope; Section~\ref{sec:robustness}).
 
 \subsection{What the design does not separate}
 \label{sec:mech_what_not}
 
-The interaction-zone characterization is identified through the size-restriction migration and the cross-state gradient. It does not separate alternative within-family microfoundations that share the same size-ownership conditioning. Three candidates the design treats as observationally similar:
-
-\paragraph{Literacy-modulated retail demand intensity.} The reading the paper most naturally adopts: in interaction-zone firms, retail demand intensity is decreasing in state literacy because literate retail investors trade less on momentum-IV anomalies. The cross-state gradient direction is consistent with this reading.
-
-\paragraph{Literacy-modulated retail attention.} A second reading where high-literacy state retail investors pay less attention to recent winners (and therefore exert less momentum-following demand pressure). The size-restriction migration and the cross-state gradient cannot distinguish this from the demand-intensity reading.
-
-\paragraph{Literacy-modulated retail timing.} A third reading where literate state retail investors enter and exit positions at different times than illiterate state retail investors. This would generate the same cross-state gradient through a clientele timing rather than a demand-intensity channel.
-
-The three readings make different predictions for retail trade-flow data (volume, holding-period turnover, time-series cross-spectral signatures) that aren't available in the current panel. The TAQ-based Boehmer-Jones-Zhang retail trade indicator would provide a margin to separate them; this is a natural next-paper extension.
+The interaction-zone characterization is identified through the size-restriction migration and the cross-state gradient, but it does not separate three within-family microfoundations that share the same size-ownership conditioning: literacy-modulated retail demand \emph{intensity} (the reading the paper most naturally adopts, with the cross-state gradient direction consistent with it), literacy-modulated retail \emph{attention} (less momentum-following demand pressure in high-literacy states), and literacy-modulated retail \emph{timing} (a clientele-timing channel generating the same gradient). The three make different predictions for retail trade-flow data (volume, turnover, cross-spectral signatures) not available in the current panel; the TAQ-based Boehmer-Jones-Zhang retail trade indicator would separate them, a natural next-paper extension.
 
 \subsection{Population-scope limitation from the PIT correction}
 \label{sec:mech_population}
 
-The mechanism characterization holds on the stable-HQ subsample, on which the local-investor unit of analysis is held fixed. Under the point-in-time EDGAR 10-K-header reassignment, which correctly handles the 14 percent of firm-months whose then-current headquarters state differs from the static Compustat snapshot, the aggregate three-way coefficient collapses by roughly thirty-nine fold ($-0.0117 \to -0.0003$) and the mid-IO coefficient by twenty-six fold ($-0.0321 \to -0.00121$). The directional within-tercile pattern survives on the corrected full panel, but the magnitudes do not. The interaction-zone characterization in this paper is therefore a statement about firms with stable headquarters across the panel window --- the population for which the local-investor channel is well-defined --- not about the full panel under point-in-time literacy reassignment. Section~\ref{sec:robustness} reports the full PIT diagnostic.
+The characterization holds on the stable-HQ subsample, on which the local-investor unit of analysis is held fixed. Under the point-in-time 10-K-header reassignment, the aggregate three-way collapses roughly thirty-nine fold ($-0.0117 \to -0.0003$) and the mid-IO coefficient twenty-six fold ($-0.0321 \to -0.00121$): the directional within-tercile pattern survives but the magnitudes do not. The interaction-zone characterization is therefore a statement about stable-headquarters firms, not the PIT-corrected full panel. Section~\ref{sec:robustness} reports the full PIT diagnostic.

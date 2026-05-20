@@ -1,0 +1,115 @@
+\section{Mechanism}
+\label{sec:mechanism}
+
+\subsection{What the data rule out}
+\label{sec:mech-bounds}
+
+A generic state-level moderator hits all headquarters-state stocks alike and cannot produce a within-stock tercile-level concentration; the within-stock IO-tercile contrast of Section~\ref{sec:headline} is therefore the family-level discrimination this design supports. The discrimination scope is generic state-level confounds (business cycles, brokerage-participation density, state demographic and industrial mix). Ownership-interactive state-level confounds---a state-level moderator that itself operates differently across IO terciles---remain an open class. The variance-channel diagnostic and the college horse-race (Section~\ref{sec:variance}) rule out the simplest statistical and education-proxy alternatives against the low-IO comparator; the HHI alternative (IA~\ref{ia:hhi}) shows the discrimination is about ownership share, not generic ownership concentration.
+
+\paragraph{The canonical arbitrage-capacity microfoundation is refuted within mid-IO.} Within the mid-IO tercile of the stable-HQ subsample ($N = 191{,}589$, 2{,}006 firms), I decompose the headline three-way by within-month NYSE IV decile. The canonical arbitrage-capacity microfoundation puts the strongest moderation at high-IV stocks: arbitrage costs scale with idiosyncratic risk, so literacy-modulated retail demand displaces less mispricing where arbitrage is cheap and more where it is expensive. Table~\ref{tab:iv_within_mid_io} reports the decomposition.
+
+\begin{table}[t]
+\centering
+\caption{Within-mid-IO IV-decile decomposition (persistent IO, stable-HQ)}
+\label{tab:iv_within_mid_io}
+\footnotesize
+\begin{minipage}{\textwidth}
+\centering
+\begin{tabular}{lccc}
+\toprule
+IV decile (within-firm IV percentile) & $\hat\gamma$ & State-$t$ & $N$ \\
+\midrule
+1 (lowest IV; firm IV mean $= -0.87$)  & $-0.039$ & $-0.31$ & 19,430 \\
+2                                       & $-0.049$ & $-0.37$ & 28,223 \\
+3                                       & $-0.053$ & $-0.76$ & 25,183 \\
+4                                       & $-0.024$ & $-0.35$ & 23,345 \\
+5                                       & $-0.038$ & $-0.68$ & 20,191 \\
+\textbf{6}                              & $\mathbf{-0.090}$ & $\mathbf{-2.30}$ & 17,853 \\
+7                                       & $+0.000$ & $-0.00$ & 18,459 \\
+8                                       & $-0.050$ & $-1.03$ & 16,458 \\
+9                                       & $-0.028$ & $-1.09$ & 13,880 \\
+10 (highest IV; firm IV mean $= +1.15$) & $-0.004$ & $-0.11$ & 8,567 \\
+\midrule
+Bottom-3 average  & $-0.047$ & --- & 72,836 \\
+Top-3 average     & $-0.027$ & --- & 38,905 \\
+Joint test, equal-decile $\chi^{2}$ (df $= 9$) & $3.59$, $p = 0.94$ & --- & --- \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+
+\medskip
+{\footnotesize\textit{Notes.} The coefficient $\hat\gamma$ is on $\mathrm{mom}\times\mathrm{IV}\times\mathtt{literacy\_z}$ estimated within the mid-IO (IO2) tercile of the stable-HQ subsample, restricted to the IV decile indicated. Deciles are computed within-firm via \texttt{pd.qcut} on firm-mean IV. State-clustered $t$-statistics. Joint test is a state-cluster-SE-weighted $\chi^{2}$ of equal decile coefficients. Persistent IO measure.}
+\end{table}
+
+The IV-decile joint test fails to reject decile equality ($\chi^{2} = 3.59$, $p = 0.94$); decile 10, where the canonical arbitrage-capacity reading predicts the strongest moderation, returns $\hat\gamma \approx 0$. The data rule out the canonical arbitrage-capacity microfoundation within mid-IO. (Decile 6 is individually significant; under time-varying IO decile equality also fails to reject, $\chi^{2} = 12.59$, $p = 0.18$.)
+
+\paragraph{The pure-retail margin returns a wrong-signed but artifact-driven null.} The within-low-IO literacy gradient runs the opposite direction of the naive sophistication reading (Section~\ref{sec:withinretail}): the low-literacy-minus-high-literacy difference is $+0.0033$ persistent ($p = 0.024$). The within-retail wrong sign is fully attributable to observation-weighting (see Section~\ref{sec:withinretail} and IA~\ref{ia:ivdecile}). Because the sign reversal is itself an aggregation artifact, the within-retail margin fails to provide positive evidence either for or against the naive sophistication reading; it does not separate within-family candidates.
+
+\subsection{The Chow diagnostic on curvature stability is underpowered}
+\label{sec:mech-stability}
+
+Beneath the mid-IO concentration headline, the pre/post-2015 split returns a Chow $\chi^{2}(1)\,p = 0.997$ that is consistent with equality of $\hat\gamma_{5}$ across the 2015 break but is an underpowered diagnostic, not positive structural evidence. The wild-cluster bootstrap $p = 0.999$ is mechanical for a $t$-statistic this close to zero (state-clustered contrast $t = -0.003$); $\gamma_{5}$ itself is not individually significant on either half ($t = 1.49$ pre, $t = 1.76$ post); and the contrast standard error is approximately ninety percent of $\hat\gamma_{5}$ itself. The test cannot distinguish stability from absence of evidence.
+
+With that calibration fixed: $\hat\gamma_{5}^{\text{pre}} = +0.0152$ (state-clustered $t = +1.49$) and $\hat\gamma_{5}^{\text{post}} = +0.0153$ (state-clustered $t = +1.76$), with a contrast of $-4.3 \times 10^{-5}$ (state-clustered $t = -0.003$). A formal Chow test of equality on the stable-HQ persistent-IO four-way ($N = 518{,}962$ stacked observations, 217,207 pre + 301,755 post, 51 states) fails to reject: Wald $\chi^{2}(1)\,p = 0.997$ (primary), $F(1, 518636)\,p = 0.995$, and a state-clustered wild-cluster bootstrap with the null imposed and Webb six-point weights ($B = 999$) returns $p = 0.999$ corroborating the asymptotic test. The curvature shape---not its location---is consistent with equality across the break. The trough $\mathrm{IO}^{\ast}$ drifts from $0.26$ to $0.40$ and the linear-IO four-way magnitude grows, while the curvature $\hat\gamma_{5}$ holds nearly invariant.
+
+The reading the data support is a stable relative location of the trough within a drifting IO distribution. The curvature shape is a property of where literacy moderation lies in the ownership distribution; the absolute IO share at which the moderation peaks does not survive the 2015 secular shift in median IO. The pattern is consistent with a residual non-compositional component, though the test lacks power to distinguish it from a slowly-drifting compositional curvature. I do not lean on the stability claim as identification of a specific within-family microfoundation.
+
+\subsection{Within-family readings: candidates the design does not separate}
+\label{sec:mech-readings}
+
+After the within-mid-IO IV-decile refutation of the canonical arbitrage-capacity reading, compositional heterogeneity is the most direct family-internal description of what remains. The mid-IO tercile mechanically carries the largest within-tercile dispersion in actual ownership composition and is likely to be more heterogeneous on other channel-relevant dimensions (firm size, industry, retail-investor age, brokerage density) than the pure terciles. The within-mid-IO IV-decile diffusion on persistent IO is consistent with this reading. The Chow diagnostic on $\hat\gamma_{5}$ documented above is consistent with a residual non-compositional component but is underpowered (Section~\ref{sec:mech-stability}); the data do not isolate it. A literacy-correlated local-bias-intensity reading and a mixed-clientele reading are observationally similar to compositional heterogeneity on the discriminating margins this design supports; brokerage-level data and a within-mid-IO sort on within-firm IO dispersion are the next-paper discriminators not available here. A natural family-internal reading referees would anticipate (an arbitrage-capacity Goldilocks with $\mathrm{IO}(1-\mathrm{IO})$ peaking at $\mathrm{IO} = 0.5$) is empirically refuted: the continuous-margin trough is at $\mathrm{IO}^{\ast} \approx 0.30$ to $0.34$ rather than $0.5$ (the three reported sample-and-IO-measure combinations return $\mathrm{IO}^{\ast} \in \{0.300, 0.328, 0.344\}$; Table~\ref{tab:headline_quadratic}), and the within-mid-IO IV-decile decomposition refutes the high-IV-arbitrage microfoundation.
+
+\subsection{Interpretive schematic and the posited reduced form}
+
+Table~\ref{tab:schematic} is an interpretive schematic, not a causal directed acyclic graph; absent edges are not claimed as tested exclusions.
+
+\begin{table}[t]
+\centering
+\caption{Interpretive schematic of the channel family, the nested baseline, and the documented patterns}
+\label{tab:schematic}
+\footnotesize
+\begin{minipage}{0.95\textwidth}
+\centering
+\begin{tabular}{|p{0.38\textwidth}|p{0.54\textwidth}|}
+\hline
+\textbf{Object} & \textbf{Content} \\
+\hline
+Channel family (topic) & Local bias $\times$ limits-to-arbitrage $\times$ sophistication-dependent local retail demand on HQ-state firms, transmitted through state NFCS literacy. \\
+\hline
+Nested baseline (prior aggregate prediction) & Aggregate three-way negative; retail-versus-institutional difference negative. Refuted under PIT (Section~\ref{sec:nestedbaseline}). \\
+\hline
+Stable-HQ headline population & 6{,}081 firms with no in-sample EDGAR relocation. \\
+\hline
+\textbf{Headline (discrete tercile)} & $\hat\gamma_{\text{mid}} = -0.0321$, $p = 0.064$ individual, family-wise $p = 0.077$. Functional-form-free. \\
+\hline
+Corroborating quadratic U-shape & $\hat\gamma_{5} = +0.0151$, $p = 0.017$, $\mathrm{IO}^{\ast} = 0.34$. Five-percent clearance is parametric (Section~\ref{sec:robust-form}). \\
+\hline
+Chow diagnostic on curvature $\gamma_{5}$ & $\chi^{2}(1)\,p = 0.997$; consistent with equality across the 2015 break, but underpowered (contrast SE $\approx$ 0.9 $\times$ $\hat\gamma_{5}$); trough $\mathrm{IO}^{\ast}$ drifts. \\
+\hline
+\textbf{Within-mid-IO IV-decile} & Diffuse under persistent IO ($p = 0.94$); rules out canonical arbitrage-capacity microfoundation. \\
+\hline
+Family-internal candidates (parallel; design does not separate) & Compositional heterogeneity; arbitrage-capacity (refuted on the IV-decile margin); literacy-correlated local-bias intensity; no-channel null (cannot be ruled out). \\
+\hline
+Population-scope limitation & PIT magnitude collapse $\approx 26\times$ on the corrected full panel. \\
+\hline
+\end{tabular}
+\end{minipage}
+
+\medskip
+{\footnotesize\textit{Notes.} Interpretive schematic; not a causal directed acyclic graph.}
+\end{table}
+
+I posit three reduced-form relationships. Each is a stated empirical pattern, not a derived proposition.
+
+\paragraph{Posit 1 (headline discrete-tercile mid-IO concentration).} Stratifying the three-way by within-stock IO tercile,
+\begin{equation}
+\label{eq:posit1}
+\gamma_{\text{IO,mid}} < 0,\quad |\gamma_{\text{IO,mid}}| > |\gamma_{\text{IO,low}}|,\;\; |\gamma_{\text{IO,mid}}| > |\gamma_{\text{IO,high}}|.
+\end{equation}
+Estimate (stable-HQ persistent): $\hat\gamma_{\text{IO,mid}} = -0.0321$ (individual wcb $p = 0.064$; family-wise Romano-Wolf $p = 0.077$).
+
+\paragraph{Posit 2 (parametric corroborating U-shape; form-fragile).} Augmenting the headline three-way with a quadratic-IO interaction (Equation~\ref{eq:quadIO}), the literacy slope $s(\mathrm{IO}) = \gamma_{3} + \gamma_{4}\,\mathrm{IO} + \gamma_{5}\,\mathrm{IO}^{2}$ has an interior trough $\mathrm{IO}^{\ast} \in (0,1)$ with $\gamma_{5} > 0$. Estimate (stable-HQ persistent): $\hat\gamma_{5} = +0.0151$ ($p = 0.017$); $\mathrm{IO}^{\ast} = 0.344$. The five-percent clearance is parametric and does not survive log-IO or kink-IO alternatives (Section~\ref{sec:robust-form}); the curvature is consistent with equality across the 2015 break under an underpowered Chow diagnostic (Section~\ref{sec:mech-stability}).
+
+\paragraph{Posit 3 (within-mid-IO IV-decile diffusion bounds canonical microfoundation).} Decomposing the headline three-way within mid-IO by within-month NYSE IV decile, the within-mid-IO IV-decile coefficients are diffuse on the persistent IO measure (joint $\chi^{2}$ fails to reject equal decile coefficients; $\hat\gamma_{d=10} \approx 0$). This bounds the canonical arbitrage-capacity microfoundation.
+
+The seed's specific aggregate and within-stock retail-versus-institutional predictions are stated as the nested baseline the corrected sample refutes; they are not posited.

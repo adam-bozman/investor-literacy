@@ -1,0 +1,223 @@
+\section{Results}
+\label{sec:results}
+
+This section establishes the headline empirical fact and disciplines it. Subsection~\ref{sec:headline} reports the discrete-tercile mid-IO concentration on the stable-HQ subsample, which is the load-bearing functional-form-free characterization. Subsection~\ref{sec:quadratic} reports the continuous-margin quadratic specification that corroborates the U-shape. Subsections~\ref{sec:relocator} and~\ref{sec:prepost} bound the result: the relocator decomposition shows how much of the stable-HQ mid/low ratio comes from sample selection, and the pre/post-2015 split tests temporal stability. Subsection~\ref{sec:withinretail} reports a within-retail null that is itself an aggregation artifact. Subsection~\ref{sec:nestedbaseline} reports the point-in-time literacy reassignment under which the seed's specific aggregate prediction collapses. Subsection~\ref{sec:variance} reports the variance and college-attainment diagnostics that rule out two purely statistical readings of the mid-IO concentration.
+
+\subsection{Headline: the discrete-tercile mid-IO concentration}
+\label{sec:headline}
+
+Re-estimate the headline three-way regression (Equation~\eqref{eq:headline}, Section~\ref{sec:identification}) separately within each within-stock IO tercile of the stable-HQ subsample. Table~\ref{tab:headline} reports the result under persistent and time-varying IO.
+
+\begin{table}[t]
+\centering
+\caption{Mid-IO concentration: three-way coefficient by IO tercile, stable-HQ subsample}
+\label{tab:headline}
+\footnotesize
+\begin{minipage}{\textwidth}
+\centering
+\textit{Panel A: Persistent IO measure}\\[2pt]
+\begin{tabular}{lccccc}
+\toprule
+Tercile & Mean IO share & $\hat\gamma$ & State-clustered $t$ & wcb $p$ & $N$ \\
+\midrule
+IO1 (low; high retail)        & 0.170 & $-0.0113$ & $-1.04$ & 0.296 & 144,989 \\
+\textbf{IO2 (mid)}            & \textbf{0.495} & $\mathbf{-0.0321}$ & $\mathbf{-2.63}$ & $\mathbf{0.064}$ & 191,589 \\
+IO3 (high; institutional)     & 0.704 & $-0.0050$ & $-0.31$ & 0.760 & 182,384 \\
+\bottomrule
+\end{tabular}
+
+\medskip
+\textit{Panel B: Time-varying IO measure}\\[2pt]
+\begin{tabular}{lccccc}
+\toprule
+Tercile & Mean IO share & $\hat\gamma$ & State-clustered $t$ & wcb $p$ & $N$ \\
+\midrule
+IO1 (low; high retail)        & 0.174 & $-0.0087$ & $-0.92$ & 0.337 & 141,129 \\
+\textbf{IO2 (mid)}            & \textbf{0.504} & $\mathbf{-0.0265}$ & $\mathbf{-2.28}$ & $\mathbf{0.058}$ & 184,881 \\
+IO3 (high; institutional)     & 0.711 & $-0.0044$ & $-0.25$ & 0.789 & 167,879 \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+
+\medskip
+{\footnotesize\textit{Notes.} Each row reports the three-way coefficient $\hat\gamma$ on $\mathrm{mom}\times\mathrm{IV}\times\mathtt{literacy\_z}$ estimated within the IO tercile, on the stable-HQ subsample under static-snapshot literacy. The persistent measure is each firm's time-mean institutional-ownership share; the time-varying measure assigns each firm-month the share from the most recent 13F quarter with report date at least four months earlier. Wild-cluster bootstrap uses Webb six-point weights \citep{cameronGelbachMiller2008} with $B = 4{,}999$ and null imposed. Sample: January 2009 through December 2023. Under the 2009-vintage tercile assignment (each firm's tercile fixed at its 2009-full-year-mean IO), $\approx 5$ percent of firms drift terciles and the mid/low ratio attenuates from 2.83 to 2.09 (Section~\ref{sec:robust-vintage}).}
+\end{table}
+
+The mid-IO tercile is the only one with state-clustered $|t|>2$ on both IO measures and the only one clearing the ten-percent wild-cluster bootstrap threshold ($p = 0.064$ persistent, $p = 0.058$ time-varying). The low- and high-IO coefficients are roughly one-third and one-sixth of the mid magnitude. A Romano-Wolf step-down family-wise correction across the three pre-specified patterns --- mid-IO concentration, within-retail wrong sign, and the continuous-margin quadratic --- returns family-wise $p = 0.077$, bounded by the discrete-margin tests. The family was fixed before the functional-form-robustness grid was run. The reported $0.077$ is the conservative bound from the original family composition in which the quadratic was not yet significant; recomputing with the current quadratic ($p = 0.017$) would tighten the family-wise $p$, not loosen it.
+
+This discrete-tercile contrast is functional-form-free: it discretizes the within-stock IO distribution into three buckets and reports the coefficient on each. It is the load-bearing characterization of the headline fact, and the continuous-margin quadratic in Subsection~\ref{sec:quadratic} corroborates rather than replaces it.
+
+\subsection{Quadratic-IO corroboration of the U-shape}
+\label{sec:quadratic}
+
+Augmenting the headline three-way with a quadratic-IO interaction on the stable-HQ subsample,
+\begin{equation}
+\label{eq:quadIO}
+r_{i,s,t} = \alpha_{s} + \tau_{t}
++ \gamma_{4}\,(\mathrm{mom}\cdot\mathrm{IV}\cdot\mathtt{literacy\_z}\cdot\mathrm{IO})
++ \gamma_{5}\,(\mathrm{mom}\cdot\mathrm{IV}\cdot\mathtt{literacy\_z}\cdot\mathrm{IO}^{2})
++ \boldsymbol{\beta}'\mathbf{X}_{i,s,t} + \varepsilon_{i,s,t},
+\end{equation}
+where $\mathbf{X}$ collects the 21 lower-order interactions, gives a literacy slope on $\mathrm{mom}\cdot\mathrm{IV}$ of $s(\mathrm{IO}) = \gamma_{3} + \gamma_{4}\,\mathrm{IO} + \gamma_{5}\,\mathrm{IO}^{2}$, with an interior minimum at $\mathrm{IO}^{\ast} = -\gamma_{4}/(2\gamma_{5})$ when $\gamma_{5} > 0$. Table~\ref{tab:headline_quadratic} reports the result.
+
+\begin{table}[t]
+\centering
+\caption{Quadratic-IO four-way: corroborating U-shape, stable-HQ}
+\label{tab:headline_quadratic}
+\footnotesize
+\begin{minipage}{\textwidth}
+\centering
+\begin{tabular}{lcccccc}
+\toprule
+Sample / IO measure & $\hat\gamma_{4}$ (linear) & state-$t$ & wcb $p$ & $\hat\gamma_{5}$ (quadratic) & state-$t$ & wcb $p$ \\
+\midrule
+\textbf{Stable-HQ persistent (headline)} & $\mathbf{-0.0104}$ & $\mathbf{-2.02}$ & $\mathbf{0.033}$ & $\mathbf{+0.0151}$ & $\mathbf{+2.28}$ & $\mathbf{0.017}$ \\
+Stable-HQ time-varying                   & $-0.0083$ & $-1.71$ & $0.106$ & $+0.0139$ & $+2.21$ & $0.062$ \\
+Full panel persistent (reference)        & $-0.0068$ & $-1.71$ & $0.069$ & $+0.0104$ & $+2.02$ & $0.037$ \\
+\midrule
+\multicolumn{7}{l}{Implied interior trough $\mathrm{IO}^{\ast} = -\gamma_{4}/(2\gamma_{5})$:} \\
+Stable-HQ persistent & \multicolumn{6}{c}{$\mathrm{IO}^{\ast} = 0.344$} \\
+Stable-HQ time-varying & \multicolumn{6}{c}{$\mathrm{IO}^{\ast} = 0.300$} \\
+Full panel persistent & \multicolumn{6}{c}{$\mathrm{IO}^{\ast} = 0.328$} \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+
+\medskip
+{\footnotesize\textit{Notes.} The coefficients are on the standardized four-way interactions $\mathrm{mom}\times\mathrm{IV}\times\mathtt{literacy\_z}\times\mathrm{IO}$ and $\mathrm{mom}\times\mathrm{IV}\times\mathtt{literacy\_z}\times\mathrm{IO}^{2}$ entered jointly with all 21 lower-order terms. State and month fixed effects absorbed. Wild-cluster bootstrap with Webb six-point weights \citep{webb2014, cameronGelbachMiller2008}, $B = 4{,}999$, null imposed. Sample sizes: stable-HQ persistent $N = 519{,}090$; stable-HQ time-varying $N = 493{,}889$; full-panel persistent $N = 623{,}746$.}
+\end{table}
+
+On the persistent measure, $\hat\gamma_{5} = +0.0151$ clears wild-cluster bootstrap $p = 0.017$, and the implied trough $\mathrm{IO}^{\ast} = 0.344$ sits inside the mid-IO mean share of $0.495$. The U-shape characterization is therefore consistent across the discrete-tercile and quadratic specifications. The five-percent statistical clearance, however, rests on the quadratic functional form: Section~\ref{sec:robust-form} reports $p = 0.75$ under a log-IO transformation, $p = 0.24$ under a kink-IO specification at the empirical minimum, and a flat twenty-bin conditional-mean diagnostic. The inferential statement that does not depend on the parametric form is the discrete-tercile $p = 0.064$ (individual) and $p = 0.077$ (family-wise).
+
+\subsection{Relocator decomposition: the stable-HQ mid/low ratio is partly sample-selection}
+\label{sec:relocator}
+
+The stable-HQ mid/low ratio of $2.83$ exceeds the full-panel ratio of $1.09$. Table~\ref{tab:relocator} decomposes the gap.
+
+\begin{table}[t]
+\centering
+\caption{Relocator decomposition: by-tercile coefficients across sample restrictions}
+\label{tab:relocator}
+\footnotesize
+\begin{minipage}{\textwidth}
+\centering
+\begin{tabular}{lcccr}
+\toprule
+Sample & IO1 (low) $\hat\gamma$ & IO2 (mid) $\hat\gamma$ & IO3 (high) $\hat\gamma$ & mid/low ratio \\
+\midrule
+Full panel ($N = 623{,}896$)               & $-0.0170$ ($t=-2.05$) & $-0.0185$ ($t=-2.01$) & $+0.0043$ & 1.09 \\
+Stable-HQ ($N = 519{,}090$)                 & $-0.0113$ ($t=-1.04$) & $-0.0321$ ($t=-2.63$) & $-0.0050$ & 2.83 \\
+Relocator-only ($N = 104{,}806$, 1{,}366 firms) & $-0.0077$ ($t=-0.37$) & $-0.0124$ ($t=-0.91$) & $+0.0085$ & 1.61 \\
+\midrule
+\multicolumn{5}{l}{Relocator share of each tercile on the full panel: IO1 24.6\%; IO2 13.7\%; IO3 13.8\%.} \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+
+\medskip
+{\footnotesize\textit{Notes.} The three-way coefficient $\hat\gamma$ within each IO tercile (persistent IO) under static-snapshot literacy. State-clustered $t$-statistics in parentheses. Internet Appendix~\ref{ia:relocchar} reports the relocator-vs-stable-HQ firm-mean characteristics.}
+\end{table}
+
+Relocators are nearly twice as concentrated in the low-IO tercile ($24.6$ percent) as in the other two ($\approx 13.7$--$13.8$ percent), and the relocator-only low-IO coefficient is approximately zero. Dropping relocators therefore both attenuates the low-IO coefficient (from $-0.0170$ to $-0.0113$, a $34$-percent reduction) and grows the mid-IO coefficient (from $-0.0185$ to $-0.0321$, a $73$-percent increase). About one-third of the stable-HQ mid/low gap comes from low-IO attenuation; about two-thirds comes from mid-IO growth. The mid-IO peak on stable-HQ is therefore jointly a mid-IO peak and a low-IO suppression, and the underlying within-stock contrast is smaller than the stable-HQ ratio of $2.83$ implies. Relocators are smaller, higher-IV, and lower-return firms (IA~\ref{ia:relocchar}), a pattern consistent with a sample-selection contribution to the headline; the magnitude reading is engaged in Subsection~\ref{sec:nestedbaseline}.
+
+\subsection{Pre/post-2015 split: the curvature is stable, the trough drifts}
+\label{sec:prepost}
+
+Table~\ref{tab:prepost} splits the stable-HQ persistent-IO sample at 2015.
+
+\begin{table}[t]
+\centering
+\caption{Pre/post-2015 split: discrete tercile and continuous-margin quadratic, stable-HQ}
+\label{tab:prepost}
+\footnotesize
+\begin{minipage}{\textwidth}
+\centering
+\textit{Panel A: Discrete-tercile mid-IO coefficient}\\[2pt]
+\begin{tabular}{lcccc}
+\toprule
+Subsample & Mid-IO $\hat\gamma$ (persistent) & wcb $p$ & Mid-IO $\hat\gamma$ (time-varying) & wcb $p$ \\
+\midrule
+Pre-2015 (2009--2014)  & $-0.0389$ ($t=-1.87$) & 0.236 & $-0.0351$ ($t=-2.33$) & 0.228 \\
+Post-2015 (2015--2023) & $-0.0259$ ($t=-1.15$) & 0.266 & $-0.0209$ ($t=-0.88$) & 0.398 \\
+\bottomrule
+\end{tabular}
+
+\medskip
+\textit{Panel B: Continuous-margin quadratic-IO four-way (persistent IO, stable-HQ)}\\[2pt]
+\begin{tabular}{lccccc}
+\toprule
+Subsample & $\hat\gamma_{4}$ & wcb $p$ & $\hat\gamma_{5}$ & wcb $p$ & $\mathrm{IO}^{\ast}$ \\
+\midrule
+Pre-2015 ($N = 217{,}095$)   & $-0.0079$ ($t=-1.16$) & 0.295 & $+0.0152$ ($t=+1.49$) & 0.171 & 0.260 \\
+Post-2015 ($N = 301{,}995$)  & $-0.0123$ ($t=-1.72$) & 0.089 & $+0.0153$ ($t=+1.76$) & 0.089 & 0.402 \\
+\midrule
+\multicolumn{6}{l}{Within-state-FE median IO share: 0.59 pre-2015; 0.67 post-2015.} \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+
+\medskip
+{\footnotesize\textit{Notes.} Panel A reports the discrete-tercile mid-IO coefficient on the two halves. Panel B reports the continuous-margin quadratic-IO four-way on the same halves; the trough $\mathrm{IO}^{\ast} = -\gamma_{4}/(2\gamma_{5})$. The 2009-vintage tercile assignment (Section~\ref{sec:robustness}) attenuates the mid/low ratio from 2.83 to 2.09 with $\approx 5$ percent of firms drifting.}
+\end{table}
+
+The discrete-tercile mid-IO coefficient is directionally preserved across the split --- it is the most negative tercile in all four cells of Panel A --- but neither half is individually significant under wild-cluster bootstrap ($p = 0.24$--$0.40$). The quadratic curvature $\hat\gamma_{5}$ is essentially identical across the split ($+0.0152$ pre-2015, $+0.0153$ post-2015), but the linear-IO four-way magnitude grows and the implied trough $\mathrm{IO}^{\ast}$ drifts from $0.260$ to $0.402$ as the state-FE-controlled median IO share rises from $0.59$ to $0.67$. A formal Chow test of $\gamma_{5}^{\text{pre}} = \gamma_{5}^{\text{post}}$ fails to reject, but uninformatively: Wald $\chi^{2}(1)\,p = 0.997$, with a state-clustered contrast standard error roughly ninety percent of $\hat\gamma_{5}$ itself. The trough is at a fixed relative location within a drifting IO distribution rather than at a fixed absolute IO share; Section~\ref{sec:mech-stability} engages this interpretation.
+
+\subsection{Within-retail wrong sign}
+\label{sec:withinretail}
+
+Within the stable-HQ low-IO tercile, splitting at the within-tercile state-mean literacy median delivers a low-literacy-minus-high-literacy difference in the three-way of $+0.0033$ persistent (state-clustered $t = +2.80$, wild-cluster bootstrap $p = 0.024$) and $+0.0029$ time-varying ($t = +2.00$, $p = 0.093$). The sign runs opposite to the naive sophistication reading, in which the literacy gradient should be most negative where retail dominates.
+
+Decomposing the difference across within-month NYSE IV deciles (IA~\ref{ia:ivdecile}) shows the result is an aggregation artifact: five deciles return positive differences and five return negative, only decile 8 is individually significant, and the observation-weighted average is $+0.0002$. The aggregate $+0.0033$ is attributable to observation-weighting alone and decomposes to approximately zero across IV deciles. The sign reversal therefore provides no positive evidence against the naive sophistication reading; nor does it discriminate among within-family candidates. A similar IV-decile decomposition within mid-IO is reported in Subsection~\ref{sec:variance} alongside the mechanism diagnostics.
+
+\subsection{Nested baseline: the seed's specific aggregate prediction collapses under PIT}
+\label{sec:nestedbaseline}
+
+The seed's specific within-channel prediction was a negative aggregate three-way on the full panel and a negative within-stock retail-versus-institutional difference. Table~\ref{tab:nested} reports both under the static-snapshot literacy merge and under the point-in-time EDGAR 10-K-header literacy reassignment.
+
+\begin{table}[t]
+\centering
+\caption{The nested baseline: seed's specific predictions and their PIT collapse}
+\label{tab:nested}
+\footnotesize
+\begin{minipage}{\textwidth}
+\centering
+\textit{Panel A: Aggregate three-way coefficient}\\[2pt]
+\begin{tabular}{lrrrr}
+\toprule
+Specification & $\hat\gamma$ & State-$t$ & wcb $p$ & $N$ \\
+\midrule
+Full panel, static-snapshot literacy (seed's convention) & $-0.0117$ & $-2.17$ & 0.078 & 623,896 \\
+Full panel, PIT literacy reassignment                    & $-0.0003$ & $-0.86$ & 0.517 & 623,814 \\
+Stable-HQ subsample, static literacy                     & $-0.0145$ & $-1.94$ & 0.122 & 519,090 \\
+\bottomrule
+\end{tabular}
+
+\medskip
+\textit{Panel B: Mid-IO coefficient on the PIT full panel (binding population-scope limitation)}\\[2pt]
+\begin{tabular}{lrrr}
+\toprule
+Specification & Mid-IO $\hat\gamma$ & State-$t$ & wcb $p$ \\
+\midrule
+Stable-HQ static, persistent (Table~\ref{tab:headline}) & $-0.0321$ & $-2.63$ & 0.064 \\
+PIT full-panel, persistent                              & $-0.00121$ & $-2.07$ & --- \\
+PIT full-panel, time-varying                            & $-0.00097$ & $-2.35$ & --- \\
+Magnitude collapse (stable-HQ / PIT)                    & $\approx 26\times$ & & \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+
+\medskip
+{\footnotesize\textit{Notes.} The static-snapshot merge pairs each firm-month with the literacy of its Compustat \texttt{state}; the PIT reassignment re-merges against the firm's then-current 10-K-header state and re-z-scores within month. State-level wild-cluster bootstrap (Webb six-point, $B = 4{,}999$ or $9{,}999$, null imposed). Full PIT diagnostic stack in IA~\ref{ia:pit}; PIT mid-IO table in IA~\ref{ia:pitmidio}.}
+\end{table}
+
+Under the seed's static-snapshot merge, the full-panel aggregate three-way is $-0.0117$ at marginal significance ($p = 0.078$). Under the PIT reassignment, it collapses to $-0.0003$ ($p = 0.517$) --- approximately thirty-nine times smaller. The within-stock retail-versus-institutional difference moves from $-0.0211$ to $+0.00029$, a sign flip. The seed's specific aggregate prediction is an artifact of pairing relocator firm-months with the literacy of their static-snapshot headquarters state rather than their then-current state.
+
+Panel B records the corresponding collapse in the mid-IO coefficient on the PIT full panel: from $-0.0321$ on stable-HQ to $-0.00121$ on PIT full-panel, approximately twenty-six times smaller. The within-stock tercile pattern is directionally preserved --- mid-IO remains the only tercile with state-clustered $|t| \geq 2$ on both IO measures --- but the magnitudes are not. The PIT magnitude collapse is the binding population-scope limitation: the headline holds on the stable-HQ subsample, where the local-investor unit of analysis is held fixed, and is roughly twenty-six times smaller on the corrected full panel. Two readings of the gap are admissible under the design: that the mechanism operates most strongly on stable-HQ firms, or that the stable-HQ subsample is sample-selected toward where the result is strongest. The relocator characteristics in IA~\ref{ia:relocchar} lean toward the sample-selection reading; the mechanism-strength reading of the magnitude collapse is not defendable on current evidence.
+
+\subsection{Variance-channel diagnostic and college horse-race}
+\label{sec:variance}
+\label{sec:college}
+
+A purely statistical reading would attribute the mid-IO concentration to greater identifying variation at the mid tercile. The data rule this out for the comparison that matters. Within-tercile variances of the focal triple $\mathrm{mom}\cdot\mathrm{IV}\cdot\mathtt{literacy\_z}$ on the stable-HQ subsample are $1.664$ (low-IO), $0.673$ (mid-IO), and $0.434$ (high-IO); Bartlett's equal-variance test rejects strongly, and the same ordering survives state-month demeaning. Mid-IO has lower identifying variation than low-IO yet a larger slope, so the variance channel cannot explain the mid-vs-low contrast. It is consistent with the mid-vs-high ranking, but that ranking is not the discriminating margin.
+
+State financial literacy correlates with state college attainment at $\rho = 0.62$, so a second purely statistical reading is that the literacy variable is a stand-in for education. A horse-race within mid-IO returns $\hat\gamma_{\text{lit}} = -0.0350$ ($t = -2.97$) and $\hat\gamma_{\text{college}} = +0.00076$ ($t = +0.65$): the literacy three-way sharpens relative to the literacy-only mid-IO baseline of $-0.0321$, while the college three-way is opposite-signed and indistinguishable from zero. On the stable-HQ aggregate, $\hat\gamma_{\text{lit}} = -0.0122$ ($t = -1.65$) and $\hat\gamma_{\text{college}} = -0.00051$ ($t = -0.63$). Literacy is not a proxy for college attainment within mid-IO.

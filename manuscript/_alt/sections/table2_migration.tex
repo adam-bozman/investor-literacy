@@ -1,0 +1,64 @@
+% Table 2 — Interaction-zone migration under size filters
+% Insert into results section after the headline Table 1.
+
+\begin{table}[t]
+\centering
+\caption{Interaction-zone migration: IO tercile three-way coefficient under size filters, stable-HQ subsample, size-controlled}
+\label{tab:migration}
+\footnotesize
+\begin{minipage}{\textwidth}
+\centering
+\textit{Panel A: Within-panel three-way coefficient $\hat\gamma_{\text{lit}}$ by IO tercile}\\[2pt]
+\begin{tabular}{lcccr}
+\toprule
+Size filter & IO1 (low) & IO2 (mid) & IO3 (high) & $N$ \\
+\midrule
+Full stable-HQ panel (paper)
+  & $-0.0077$ ($-0.65$)
+  & $\mathbf{-0.0256}$ ($\mathbf{-2.24}$)
+  & $-0.0001$ ($-0.00$)
+  & 518,962 \\
+Drop bottom 20\% (micro-cap)
+  & $-0.0137$ ($-1.14$)
+  & $\mathbf{-0.0402}$ ($\mathbf{-2.57}$)
+  & $+0.0109$ ($+0.75$)
+  & 454,107 \\
+Drop bottom 33\% (small-cap)
+  & $-0.0155$ ($-1.02$)
+  & $-0.0273$ ($-1.29$)
+  & $+0.0122$ ($+0.66$)
+  & 395,873 \\
+Drop bottom 50\% (below median)
+  & $\mathbf{-0.0441}$ ($\mathbf{-2.04}$)
+  & $-0.0098$ ($-0.58$)
+  & $+0.0115$ ($+0.58$)
+  & 322,137 \\
+\bottomrule
+\end{tabular}
+
+\medskip
+\textit{Panel B: Cross-state weighted-slope of per-state $\hat\gamma_{\text{lit}}$ on state literacy}\\[2pt]
+\begin{tabular}{lcccc}
+\toprule
+Size filter, sample cell & weighted slope & state-$t$ & Pearson $r$ & $n_{\text{states}}$ \\
+\midrule
+Full panel, mid-IO (headline cell)
+  & $\mathbf{-0.0623}$ & $\mathbf{-5.01}$ & $-0.275$ & 42 \\
+Drop bottom 20\%, mid-IO
+  & $-0.0171$ & $-2.66$ & $-0.130$ & 37 \\
+Drop bottom 33\%, mid-IO
+  & $-0.0065$ & $-0.74$ & $+0.002$ & 36 \\
+Drop bottom 50\%, mid-IO
+  & $-0.0325$ & $-3.82$ & $+0.008$ & 31 \\
+\addlinespace
+Drop bottom 50\%, IO1 (new headline cell)
+  & $\mathbf{-0.0379}$ & $\mathbf{-4.30}$ & $\mathbf{-0.291}$ & 34 \\
+Drop bottom 50\%, IO3 (predicted null)
+  & $+0.0061$ & $+0.26$ & $+0.054$ & 31 \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+
+\medskip
+{\footnotesize\textit{Notes.} All specifications include state and month fixed effects and the four size-moderation controls (size\_z, mom $\cdot$ size\_z, IV $\cdot$ size\_z, mom $\cdot$ IV $\cdot$ size\_z) in addition to the seven FOCAL regressors of Equation~\eqref{eq:headline}. State-clustered $t$-statistics in parentheses. Per-state regressions use within-month demeaning and permno-clustered SEs; the cross-state weighted-slope precision-weighting uses $1/\mathrm{SE}^{2}$. Size filters are applied at the firm level using the firm's panel-mean market capitalization. Bold cells indicate the within-panel tercile or cross-state cell carrying the literacy moderation under each size filter. Panel A reads: as smaller firms are progressively removed, the tercile containing the ``interaction zone'' shifts from mid-IO to low-IO. Panel B reads: the cross-state literacy gradient migrates with it.}
+\end{table}

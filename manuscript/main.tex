@@ -1,0 +1,47 @@
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\IfFileExists{papersetup.sty}{\usepackage{papersetup}}{}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{setspace}
+\doublespacing
+
+% Cross-document references to the Internet Appendix (conditional — only if aux exists)
+\usepackage{xr}
+\IfFileExists{../appendix/internet_appendix.aux}{\externaldocument{../appendix/internet_appendix}}{}
+
+\title{Locally Biased, Financially Blind:\\
+Where State Investor Literacy Moderates the\\
+Momentum--Idiosyncratic-Volatility Anomaly}
+\author{Adam Bozman\thanks{Washington State University. Email: \texttt{bozmanadam@gmail.com}.}}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+Retail investors trade locally, and they trade more like the people around them than the textbook investor: chasing recent winners, anchoring on familiar names, paying limited attention to volatility-adjusted risk. State-level financial literacy varies substantially across the United States, and a large household-finance literature documents that less literate investors make systematically worse portfolio choices. If those choices show up in prices, they should show up as a state-literacy moderation of return anomalies that depend on retail mispricing. Yet in aggregate, the empirical signature is faint: a regression of the momentum--idiosyncratic-volatility interaction on state literacy returns modest coefficients without a clean economic story. This paper asks a sharper question: not whether literacy moderates the anomaly, but \emph{where in the cross-section} it does, and what microfoundation that location identifies. The answer, on the stable-headquarters subsample of CRSP-listed U.S. common stock from 2009 to 2023, is that the moderation lives in firms that occupy an interaction zone --- enough retail demand to move prices, enough institutional activity to translate that demand into return differences across literate and illiterate states. In the full panel these firms fall in the middle of the institutional-ownership distribution; under sample restrictions to larger firms they migrate to the low-IO tercile, exactly as the interaction-zone reading predicts. Firms dominated by institutions show no literacy gradient at all, consistent with arbitrage neutralizing the local-state channel. The contribution is a precisely-bounded characterization of where a literacy mechanism operates, and an empirical signature --- migration with size composition --- that identifies the mechanism without requiring an instrumental-variables strategy.
+\end{abstract}
+
+\input{sections/introduction}
+\input{sections/data}
+\input{sections/identification}
+\input{sections/results}
+\input{sections/mechanism}
+\input{sections/robustness}
+\input{sections/discussion}
+\input{sections/conclusion}
+\input{sections/appendix}
+
+\bibliographystyle{plainnat}
+\IfFileExists{references.bib}{\bibliography{references}}{}
+
+\end{document}

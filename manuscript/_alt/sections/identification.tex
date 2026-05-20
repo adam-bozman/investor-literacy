@@ -1,0 +1,31 @@
+\section{Identification}
+\label{sec:identification}
+
+\subsection{Design and variation exploited}
+
+The primary design is a cross-sectional two-way fixed-effects (TWFE) panel regression with state and month fixed effects. The variation it exploits is the cross-state, within-state, and cross-NFCS-wave variation in \texttt{literacy\_z}, interacted with the within-month cross-section of momentum and idiosyncratic volatility (IV). State fixed effects absorb time-invariant state characteristics; month fixed effects absorb aggregate time-varying shocks. The residual variation that identifies the three-way coefficient is the differential within-state-month sorting of $\mathrm{mom}\times\mathrm{IV}$ across firms whose headquarters-state literacy differs. The headline specification is
+
+\begin{equation}
+\label{eq:headline}
+\begin{split}
+r_{i,s,t} = {}& \alpha_{s} + \tau_{t} + \gamma \,\bigl(\mathrm{mom}_{i,t}\cdot\mathrm{IV}_{i,t}\cdot\mathtt{literacy\_z}_{s(i,t),t}\bigr) \\
+& + \delta_{1}\,(\mathrm{mom}_{i,t}\cdot\mathrm{IV}_{i,t}) + \delta_{2}\,(\mathrm{mom}_{i,t}\cdot\mathtt{literacy\_z}_{s(i,t),t}) + \delta_{3}\,(\mathrm{IV}_{i,t}\cdot\mathtt{literacy\_z}_{s(i,t),t}) \\
+& + \boldsymbol{\beta}'\mathbf{X}_{i,s,t} + \varepsilon_{i,s,t},
+\end{split}
+\end{equation}
+
+where $r_{i,s,t}$ is the month-$t$ return of firm $i$ headquartered in state $s(i,t)$, $\alpha_{s}$ and $\tau_{t}$ are state and month fixed effects, $\mathbf{X}_{i,s,t}$ collects the lower-order terms and (in robustness specifications) the FF12 industry block, the \citet{korniotisKumar2013} business-cycle block, and the college-attainment interaction block. The state-assignment function $s(i,t)$ distinguishes two merge conventions: under the static-snapshot Compustat merge, $s(i,t) = s_{i}$ for all $t$; under the point-in-time (PIT) EDGAR 10-K-header reassignment, $s(i,t) = s_{i}(t)$ varies within firm. On the stable-HQ subsample, $s_{i}(t) = s_{i}$ for all in-sample $t$ and the two merges coincide. Equation~\eqref{eq:headline} is an estimating equation, not a derived structural relation; $\gamma$ is the conditional association the design recovers. The continuous-margin quadratic-IO specification of Section~\ref{sec:quadratic} (Equation~\ref{eq:quadIO}) augments Equation~\eqref{eq:headline} with the four-way IO and IO$^{2}$ interactions and all 21 lower-order terms. The discrete-tercile rendering re-estimates Equation~\eqref{eq:headline} separately within each within-stock IO tercile.
+
+\subsection{Identifying assumptions and their diagnostics}
+
+\paragraph{Conditional unconfoundedness of \texttt{literacy\_z} for the three-way.} Conditional on state and month fixed effects, the lower-order interactions, and the controls in $\mathbf{X}$, residual variation in state-aggregate \texttt{literacy\_z} is uncorrelated with omitted return determinants that interact with $\mathrm{mom}\times\mathrm{IV}$ in the same functional shape. The paper addresses the assumption three ways: by absorbing the FF12 industry block; by running a state college-attainment horse-race (literacy dominates within mid-IO, $\hat\gamma_{\text{lit}} = -0.0350$ vs $\hat\gamma_{\text{college}} = +0.00076$; Section~\ref{sec:college}); and by building a within-stock institutional-ownership contrast that no generic state-level moderator can fake. Section~\ref{sec:headline} reports the within-stock contrast. The discrimination claim's scope is generic state-level confounds that hit all headquarters-state stocks alike; ownership-interactive state-level confounds remain an open class (Section~\ref{sec:discussion}).
+
+\paragraph{Inference with 51 state clusters.} The natural clustering dimension is the state, and with 51 clusters asymptotic cluster-robust standard errors over-reject. The pre-registered design named two-way state-by-month CGM clustering as the headline; on inspection two-way CGM over-states the evidence by absorbing time-cluster correlation that is mechanically zero after within-month z-scoring (see Section~\ref{sec:robust-inference}), so the binding inference is the one-way state-level wild-cluster bootstrap of \citet{cameronGelbachMiller2008} with Webb six-point weights \citep{webb2014} and the null imposed; the two-way state-by-month CGM is reported as a diagnostic in IA~\ref{ia:inference}.
+
+\paragraph{Headquarters-state assignment and the literacy-merge convention.} The static Compustat snapshot mis-assigns relocator firm-months, so the static-snapshot literacy merge on the full panel contaminates the literacy variable for the 14 percent of firm-months whose PIT headquarters differs from the static one. The paper addresses the contamination two ways: headline patterns are estimated on the stable-headquarters subsample, on which the static and PIT merges coincide and the local-investor unit of analysis is held fixed; the PIT literacy reassignment on the full panel is the strictest available correction, reported as the primary correctness check (Section~\ref{sec:nestedbaseline}).
+
+\subsection{The estimand}
+
+Under the conditional-unconfoundedness assumption, the TWFE state-plus-month $\hat\gamma$ is the associational three-way cross-sectional coefficient: the average within-state-month differential sensitivity of returns to $\mathrm{mom}\times\mathrm{IV}$ as a function of state-aggregate \texttt{literacy\_z}, partialing out state and month means. It is not a clean average treatment effect of literacy. Causal language is bounded accordingly.
+
+IA~\ref{ia:did} reports a staggered-adoption difference-in-differences design around state personal-finance high-school mandates as a sign-direction sanity check, not as identifying variation that supports the cross-sectional headline. The cross-sectional contribution stands independent of the DiD.

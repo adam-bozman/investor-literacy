@@ -1,0 +1,19 @@
+# Python dependencies for the replication package.
+# Inferred from imports across code/empirical/ and code/utils/.
+# Tested with Python 3.9+. Pin versions to taste; the analysis uses only
+# stable, long-standing APIs.
+
+# --- core analysis (required to reproduce all tables/figures) ---
+numpy
+pandas
+scipy
+matplotlib
+pyarrow            # parquet I/O for the firm-month panel and caches
+
+# --- data access (required only for the WRDS/EDGAR/FRED collection steps) ---
+wrds               # CRSP, Compustat, Thomson Reuters s34 via WRDS
+python-dotenv      # loads WRDS / API credentials from a local .env (NOT committed)
+requests           # SEC EDGAR + FRED HTTP pulls
+
+# --- used only by optional helper modules in code/utils/ ---
+statsmodels        # ken_french_utils.py, mutual_fund_utils.py alpha regressions

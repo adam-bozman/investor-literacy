@@ -1,0 +1,47 @@
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\IfFileExists{papersetup.sty}{\usepackage{papersetup}}{}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{setspace}
+\doublespacing
+
+% Cross-document references to the Internet Appendix
+\usepackage{xr}
+\externaldocument{internet_appendix}
+
+\title{Where Literacy Moderates Momentum:\\
+A Characterization Across Institutional Ownership Terciles,\\
+U.S. Equities 2009--2023}
+\author{Adam Bozman}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+On the stable-headquarters subsample of CRSP U.S. equities 2009--2023, the three-way of momentum, idiosyncratic volatility (IV), and state National Financial Capability Study (NFCS) Big-Five literacy concentrates in the mid-tercile of institutional ownership (IO): $\hat\gamma_{\text{mid}} = -0.0321$, wild-cluster $p = 0.064$. Literacy dominates a state-college-attainment horse-race within mid-IO. The mid-IO coefficient collapses 26-fold and the prior aggregate three-way prediction collapses 39-fold under a point-in-time (PIT) headquarters correction; the within-mid-IO IV-decile decomposition fails to reject decile equality, leaving compositional heterogeneity indistinguishable from a no-channel null.
+\end{abstract}
+
+\input{sections/introduction}
+\input{sections/data}
+\input{sections/identification}
+\input{sections/results}
+\input{sections/mechanism}
+\input{sections/robustness}
+\input{sections/discussion}
+\input{sections/conclusion}
+\input{sections/appendix}
+
+\bibliographystyle{plainnat}
+\IfFileExists{bib.bib}{\bibliography{bib}}{}
+
+\end{document}

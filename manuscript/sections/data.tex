@@ -1,0 +1,76 @@
+\section{Data and Sample Construction}
+
+\subsection{Sample}
+
+The sample is the cross-section of CRSP-listed common stock (share codes 10 and 11; exchange codes 1, 2, 3, covering NYSE, NYSE American, and NASDAQ) from January 2009 through December 2023. The full panel contains 623,896 firm-month observations, 7,447 unique firms, 51 headquarters states (the fifty states plus the District of Columbia), and 180 calendar months. I z-score all focal variables within each calendar month, so the residual variation the regressions exploit is cross-sectional and free of time-aggregate movements. State financial literacy is measured from the NFCS Big Five literacy questions, fielded by the FINRA Investor Education Foundation in waves 2009, 2012, 2015, 2018, and 2021, and forward-filled to monthly frequency between waves.
+
+\subsection{The stable-headquarters subsample}
+\label{sec:stablehq}
+
+The local-bias channel transmits through community ties between a firm and its headquarters-state retail investor base. Such ties take time to form and to decay, so for firms that relocate headquarters within sample the effective local-investor population is ambiguous by construction. I construct a stable-headquarters subsample that drops firms with a confirmed in-sample EDGAR-based relocation, using a union of two flags: \texttt{hdr\_changed} fires when the 10-K-header business-address \texttt{STATE} changes across a firm's in-sample 10-Ks (954 firms); \texttt{sec\_disagree} fires when the firm's most-recent 10-K-header state disagrees with the static Compustat snapshot and the firm has at least two parsed 10-K headers (524 additional firms). The union identifies 1,366 relocator firms (18.9 percent of flag-covered firms, 16.8 percent of firm-months). The top first-to-last state pairs are consistent with the headquarters-relocation mechanism of \citet{pirinskyWang2006}, who show that relocating firms shift their local return comovement from origin to destination state. The stable-headquarters subsample contains 519,090 firm-months and 6,081 firms.
+
+The paper's headline patterns are estimated on the stable-headquarters subsample under static-snapshot literacy; the point-in-time literacy reassignment on the full panel is the correctness check (Section~\ref{sec:nestedbaseline}). Construction detail and PIT-coverage diagnostics are in IA~\ref{ia:pit} and IA~\ref{ia:stablehq}.
+
+\subsection{Variable definitions}
+
+The dependent variable is the monthly stock return \texttt{ret} from CRSP. Momentum is \texttt{mom\_12\_2}, the standard \citet{jegadeeshTitman1993} cumulative return from twelve months before to two months before the observation month, skipping the most recent month. Idiosyncratic volatility (IV) is the standard deviation of daily Fama-French three-factor residuals over a rolling twelve-month window. State financial literacy is the NFCS Big Five share-correct score, z-scored within month and denoted \texttt{literacy\_z}.\footnote{Correct-answer keys M6=1, M7=3, M8=2, M9=2, M10=1 (FINRA codebook; full construction detail in Appendix~\ref{app:variables}). Correct-answer keys are verified from the FINRA Foundation NFCS State-by-State Codebook, 2021 version, available at finrafoundation.org/knowledge-we-gain-share/nfcs/data-and-downloads.} Each cross-product (the two-way terms $\mathrm{mom}\times\mathrm{IV}$, $\mathrm{mom}\times\mathtt{literacy\_z}$, $\mathrm{IV}\times\mathtt{literacy\_z}$, and the three-way $\mathrm{mom}\times\mathrm{IV}\times\mathtt{literacy\_z}$) is z-scored within month. The Fama-French 12-industry block and the \citet{korniotisKumar2013} business-cycle block enter robustness specifications.
+
+\subsection{Institutional ownership from the Thomson Reuters s34 13F panel}
+
+I build a firm-quarter institutional-ownership (IO) panel from the WRDS Thomson Reuters s34 13F holdings file for 2009Q1 through 2023Q4 (222,180 firm-quarter observations, 7,907 distinct permnos). The numerator is constructed under the literature-standard convention: amendment-deduplicated filings (keep only the latest filing per (manager, security, report-date) triple) and the sole-plus-shared investment-discretion measure, rather than the raw \texttt{shares} field. Under this construction, the residual above-one rate is 0.36 percent (vs 6.49 percent under raw \texttt{shares}); I cap the residual at one. Full construction detail, with the amendment-deduplication rule keyed on \texttt{fdate} via \texttt{DISTINCT ON (mgrno, cusip) ORDER BY fdate DESC}, is in IA~\ref{ia:thomson}.
+
+The persistent IO measure is each firm's time-mean institutional-ownership share across its available Thomson quarters; the time-varying measure assigns each firm-month the share from the most recent 13F quarter with report date at least four months earlier (a strictly conservative no-look-ahead merge). On the stable-headquarters subsample, persistent IO covers 518,962 firm-months and time-varying IO covers 493,889 firm-months.
+
+\subsection{Descriptive statistics}
+
+Table~\ref{tab:descriptives} reports the cross-sectional distribution of the focal variables.
+
+\begin{table}[t]
+\centering
+\caption{Descriptive statistics and state literacy rankings}
+\label{tab:descriptives}
+\footnotesize
+\begin{minipage}{\textwidth}
+\centering
+\textit{Panel A: Distribution of focal variables (full panel)}\\[2pt]
+\begin{tabular}{lrrrrr}
+\toprule
+Variable & Mean & SD & p05 & p50 & p95 \\
+\midrule
+Monthly return            & 0.013 & 0.192 & $-0.220$ & 0.005 & 0.253 \\
+Momentum (\texttt{mom\_12\_2})   & 0.107 & 0.828 & $-0.678$ & 0.034 & 1.021 \\
+Idiosyncratic volatility       & 0.027 & 0.022 & 0.007 & 0.020 & 0.070 \\
+Market equity (\$ billions)    & 7.04  & 42.1  & 0.017 & 0.596 & 26.19 \\
+NFCS Big Five share correct    & 0.244 & 0.028 & 0.200 & 0.247 & 0.286 \\
+\bottomrule
+\end{tabular}
+
+\medskip
+\textit{Panel B: Panels and merge conventions}\\[2pt]
+\begin{tabular}{lrr}
+\toprule
+Panel & Firm-months & Firms \\
+\midrule
+Full panel (static-snapshot HQ, baseline literacy merge)  & 623,896 & 7,447 \\
+Full panel, PIT literacy reassignment                     & 623,814 & 7,447 \\
+Stable-HQ subsample (no in-sample EDGAR relocation)       & 519,090 & 6,081 \\
+\quad with persistent IO measure                          & 518,962 & 6,018 \\
+\quad with time-varying IO measure                        & 493,889 & 5,877 \\
+\bottomrule
+\end{tabular}
+
+\medskip
+\textit{Panel C: State literacy rankings and NFCS wave summary}\\[2pt]
+\begin{tabular}{ll}
+\toprule
+Highest-literacy states & MN, HI, NH, DC, CT \\
+Lowest-literacy states  & MS, OH, AR, TX, WV \\
+NFCS wave means (2009, 2012, 2015, 2018, 2021) & 0.258, 0.254, 0.255, 0.229, 0.222 \\
+Median within-state rank correlation across waves & 0.71 (Spearman) \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+
+\medskip
+{\footnotesize\textit{Notes.} Idiosyncratic volatility is the standard deviation of daily Fama-French three-factor residuals over a rolling twelve-month window. Market equity is price times shares outstanding from CRSP, in billions of dollars. The NFCS Big Five share-correct score is the state-wave share of respondents answering the FINRA Big Five financial-literacy questions correctly. The within-state rank correlation across the five NFCS waves is the median Spearman correlation of state-wave ranks across consecutive waves (a measurement-stability statistic for the state literacy ordering).}
+\end{table}

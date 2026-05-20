@@ -1,0 +1,90 @@
+# ============================================================
+# Credentials / secrets — NEVER commit
+# ============================================================
+.env
+.env.*
+*.pem
+*.key
+credentials.json
+secrets.*
+
+# ============================================================
+# Data — NOT redistributed (license-restricted: CRSP/Compustat/Thomson;
+# NFCS public but kept untracked for a uniform policy).
+# All data formats are ignored everywhere, and the data/ payload dirs are
+# ignored except their README stubs.
+# ============================================================
+*.parquet
+*.dta
+*.feather
+*.pkl
+*.sas7bdat
+*.csv
+
+# keep data/ structure + the README stubs, drop the payloads
+data/raw/*
+data/clean/*
+!data/raw/README.md
+!data/clean/README.md
+!data/raw/.gitkeep
+!data/clean/.gitkeep
+
+# allow the small generated result CSVs that ARE part of the paper's outputs
+!output/tables/*.csv
+
+# ============================================================
+# Python
+# ============================================================
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+.pytest_cache/
+.venv/
+venv/
+env/
+*.egg-info/
+.mypy_cache/
+
+# ============================================================
+# Scratch / intermediate / logs (leading-underscore caches, npy dumps)
+# ============================================================
+code/empirical/_*
+*.log
+*.npy
+*.tmp
+tmp/
+scratch/
+
+# ============================================================
+# LaTeX auxiliary files
+# ============================================================
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.nav
+*.snm
+*.vrb
+
+# ============================================================
+# OS / editor cruft
+# ============================================================
+.DS_Store
+Thumbs.db
+desktop.ini
+*~
+.idea/
+.vscode/
+
+# runtime PID files
+*.pid

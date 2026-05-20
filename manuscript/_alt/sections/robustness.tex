@@ -1,0 +1,75 @@
+\section{Robustness}
+\label{sec:robustness}
+
+This section reports the primary robustness legs: functional-form sensitivity of the quadratic-IO clearance, the classical errors-in-variables (EIV) correction, the wave-anchor and 2009-vintage forward-fill checks, and the inference discipline. The Herfindahl-Hirschman alternative, the Korniotis-Kumar business-cycle overlap, the difference-in-differences secondary design, and the full inference battery are in the Internet Appendix (Sections~\ref{ia:hhi}, \ref{ia:kk}, \ref{ia:did}, \ref{ia:inference}).
+
+\subsection{Functional-form robustness of the quadratic-IO U-shape}
+\label{sec:robust-form}
+
+The quadratic-IO five-percent clearance ($\hat\gamma_{5} = +0.0151$, $p = 0.017$; Section~\ref{sec:quadratic}) rests on the quadratic functional form. I test whether the non-monotone shape survives in alternative parametric specifications and in a fully non-parametric twenty-bin diagnostic on the stable-HQ persistent-IO subsample ($N = 518{,}962$).
+
+\begin{table}[t]
+\centering
+\caption{Functional-form grid: the quadratic five-percent clearance does not survive}
+\label{tab:form_grid}
+\footnotesize
+\begin{minipage}{\textwidth}
+\centering
+\begin{tabular}{lcccr}
+\toprule
+Specification & Focal term & Coef & State-$t$ & wcb $p$ \\
+\midrule
+\textbf{Quadratic (corroborating)} & $\gamma$ on IO$^{2}$ & $\mathbf{+0.0151}$ & $\mathbf{+2.28}$ & $\mathbf{0.017}$ \\
+Cubic & $\gamma$ on IO$^{2}$ & $-0.733$ & $-1.23$ & 0.268 \\
+Cubic & $\gamma$ on IO$^{3}$ & $+0.798$ & $+1.70$ & 0.133 \\
+Log-IO & $\gamma$ on $\log(\mathrm{IO})$ & $-0.00243$ & $-0.35$ & 0.748 \\
+Kink-IO at 0.30 & kink coef & $+0.179$ & $+1.19$ & 0.242 \\
+Kink-IO at 0.30 & linear term & $-0.116$ & $-1.11$ & 0.288 \\
+20-bin diagnostic & conditional means within $\pm 0.003$ of zero & --- & --- & --- \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+
+\medskip
+{\footnotesize\textit{Notes.} All on the stable-HQ persistent-IO subsample. Each row reports the focal-basis coefficient with state-clustered $t$ and wild-cluster bootstrap $p$. The 20-bin diagnostic partitions persistent IO into 20 quantile bins, residualizes the focal triple's contribution to monthly returns on state and month fixed effects within each bin, and reports the within-bin conditional mean of the demeaned composite. Bin-level means range from $-0.00382$ to $+0.00361$; full 20-bin table in IA~\ref{ia:quadbins}.}
+\end{table}
+
+The cubic-IO specification has near-collinear focal regressors (variance inflation factors 64, 340, 131); individual cubic coefficients are not separately identifiable, and the row is reported for completeness only. Log-IO returns a coefficient near zero ($p = 0.75$). Kink-IO at the empirical minimum delivers neither a kink coefficient nor a linear term that is statistically separable from zero. The 20-bin diagnostic shows bin-level conditional means within $\pm 0.003$ of zero across the IO range, with no visible monotonic curvature. The 5-percent statistical clearance of the U-shape rests on the quadratic functional form alone; the discrete-tercile mid-IO concentration (Table~\ref{tab:headline}) is functional-form-free and remains the headline characterization.
+
+\subsection{Classical errors-in-variables correction}
+\label{sec:robust-eiv}
+
+State NFCS literacy estimates are noisy: median Kish effective sample size is $\approx 470$ respondents per state-wave. The classical errors-in-variables (EIV) correction divides the slope by the reliability ratio $\lambda \in (0,1]$, computed from the cross-state variance of state-wave estimates against their mean state-wave sampling variance.
+
+\begin{table}[t]
+\centering
+\caption{Classical errors-in-variables correction of the mid-IO three-way}
+\label{tab:eiv}
+\footnotesize
+\begin{minipage}{\textwidth}
+\centering
+\begin{tabular}{lccc}
+\toprule
+Specification & $\hat\beta$ & State-$t$ & Note \\
+\midrule
+Baseline mid-IO (stable-HQ, persistent) & $-0.0321$ & $-2.63$ & Table~\ref{tab:headline} \\
+\textbf{EIV-corrected (} $\boldsymbol{\hat\beta_{\text{eiv}} = \hat\beta / \lambda}$ \textbf{)} & $\mathbf{-0.0763}$ & $\mathbf{-2.63}$ & 2.4$\times$ inflation \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+
+\medskip
+{\footnotesize\textit{Notes.} Firm-month-weighted reliability ratio $\lambda = 0.420$ from per-wave $\lambda_{w}$: 0.211 (2009), 0.476 (2012), 0.359 (2015), 0.562 (2018), 0.517 (2021). $\lambda_{w} = (V_{\text{obs}} - V_{\text{err}})/V_{\text{obs}}$ where $V_{\text{err}} = \hat p(1-\hat p)/n_{\text{eff}}$. The standard error treats $\lambda$ as known; bootstrapping $\lambda$ over the five NFCS waves moves the EIV $t$ into $[-2.4, -2.8]$. Full per-wave detail in IA~\ref{ia:eiv}.}
+\end{table}
+
+The firm-month-weighted reliability ratio is $\lambda = 0.420$. The EIV-corrected mid-IO coefficient is $\hat\beta_{\text{eiv}} = -0.03206 / 0.4203 = -0.0763$, the direction classical EIV theory predicts. The EIV-corrected number shares the baseline's $t = -2.63$ by construction and is the appropriate economic-magnitude anchor (Section~\ref{sec:discussion}); the baseline and EIV-corrected coefficients form one magnitude range on one variation, not two pieces of evidence.
+
+\subsection{Wave-anchor and 2009-vintage forward-fill checks}
+\label{sec:robust-vintage}
+
+Restricting to the five NFCS wave-anchor years only (2009, 2012, 2015, 2018, 2021; $N = 174{,}226$ firm-months, 62{,}032 in mid-IO), the persistent mid-IO three-way is $\hat\gamma_{\text{mid}} = -0.070$ ($t = -2.09$): sharper, not weaker, than the interpolated monthly headline. The headline is not an artifact of forward-fill. Fixing each firm's IO tercile to its 2009 full-year-mean IO assignment (only $\approx 5$ percent of firms drift under the persistent IO measure) attenuates the mid/low ratio from $2.83$ to $2.09$ but preserves the mid-IO concentration. The secular-IO-shift reading of the concentration is bounded.
+
+\subsection{Inference discipline}
+\label{sec:robust-inference}
+
+One-way state clustering on the literacy three-way is the binding inference dimension: 51 state clusters are the natural support of the focal variable. The state-level wild-cluster bootstrap of \citet{cameronGelbachMiller2008} with Webb six-point weights \citep{webb2014} and the null imposed is the appropriate small-cluster procedure. The two-way Cameron-Gelbach-Miller \citep{cameronGelbachMiller2011} $t = -5.32$ on the static-snapshot full-panel aggregate over-states the evidence relative to the wild-cluster bootstrap $p = 0.078$; I report the wild-cluster bootstrap as the binding statement throughout and show the two-way Cameron-Gelbach-Miller statistic in IA~\ref{ia:inference}. Within-tercile state-cluster counts (50 for mid-IO persistent, 49 for mid-IO time-varying; 29--41 for within-mid-IO IV deciles) lie in the range where Webb six-point weights with null imposed maintain test size close to nominal.

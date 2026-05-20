@@ -1,0 +1,9 @@
+\appendix
+\section{Variable construction detail}
+\label{app:variables}
+
+Extended robustness material is in the Internet Appendix: the Herfindahl-Hirschman alternative (IA~\ref{ia:hhi}), the Korniotis-Kumar business-cycle block (IA~\ref{ia:kk}), the difference-in-differences secondary design (IA~\ref{ia:did}), the full PIT literacy reassignment (IA~\ref{ia:pit}), the relocator-vs-stable-HQ characteristics comparison (IA~\ref{ia:relocchar}), the Thomson Reuters s34 panel construction (IA~\ref{ia:thomson}), and alternative literacy constructions (IA~\ref{ia:altlit}).
+
+\paragraph{NFCS Big Five share-correct score.} The state financial-literacy measure is the share of NFCS respondents in a state-wave who answer the FINRA Big Five literacy questions correctly. Correct-answer keys from the FINRA codebook: M6=1, M7=3, M8=2, M9=2, M10=1. An earlier build coded all five questions with a single key; the corrected keys are used throughout, and the Table~\ref{tab:descriptives} state-literacy rankings are post-correction. State-wave scores are forward-filled to monthly frequency between waves, then z-scored within calendar month to form \texttt{literacy\_z}.
+
+\paragraph{Idiosyncratic volatility.} Standard deviation of daily Fama-French three-factor residuals over a rolling twelve-month window ending in the observation month; z-scored within calendar month before entering the interaction terms.

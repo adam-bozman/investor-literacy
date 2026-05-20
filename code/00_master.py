@@ -2,8 +2,8 @@
 # =====================================================================
 # 00_master.py
 # Master run script / run-order manifest for the replication package of
-#   "Locally Biased, Financially Blind: Where State Investor Literacy
-#    Moderates the Momentum--Idiosyncratic-Volatility Anomaly."
+#   "The Interaction Zone: State Financial Literacy and the Cross-Section
+#    of the Momentum Anomaly."
 #
 # This file documents the order in which the analysis scripts in
 # code/empirical/ should be run and which manuscript/appendix exhibit each
@@ -129,7 +129,7 @@ PIPELINE = [
 
 def main():
     print("=" * 70)
-    print("REPLICATION RUN PLAN — Locally Biased, Financially Blind")
+    print("REPLICATION RUN PLAN — The Interaction Zone")
     print("RUN =", RUN, "(set RUN=True in this file to execute; read caveats first)")
     print("=" * 70)
     for name, purpose, paper in PIPELINE:

@@ -1,4 +1,4 @@
-# Locally Biased, Financially Blind: Where State Investor Literacy Moderates the Momentum–Idiosyncratic-Volatility Anomaly
+# The Interaction Zone: State Financial Literacy and the Cross-Section of the Momentum Anomaly
 
 Replication package.
 

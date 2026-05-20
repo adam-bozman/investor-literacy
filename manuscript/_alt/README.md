@@ -4,8 +4,8 @@ the project's main_v2.tex).
 
   main.tex   - alternate draft, title "Where Literacy Moderates Momentum:
                A Characterization Across Institutional Ownership Terciles"
-               (44 pp). The canonical paper is titled "Locally Biased,
-               Financially Blind."
+               (44 pp). The canonical paper is titled "The Interaction
+               Zone."
   main.pdf   - compiled alternate (44 pp).
   sections/  - the bare (non-_v2) section files this alternate \input{}s,
                plus introduction_draft.tex / results_draft.tex /

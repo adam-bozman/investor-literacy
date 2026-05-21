@@ -68,6 +68,7 @@ PIPELINE = [
 
     ("== STAGE 3: HEADLINE RESULTS ==", None, None),
     ("v7_stable_hq_centerpiece.py", "Mid-IO three-way + within-retail gradient on the stable-HQ subsample (HEADLINE)", "T2 tab:headline, T5 tab:iv_within_mid_io + IA stable-HQ"),
+    ("12_migration.py", "Interaction-zone migration: size-filter sweep + per-state cross-state slopes; regenerates Figure 2", "T4 tab:migration + Figure 2 (fig:migration)"),
     ("v9_iv_decile_within_mid_io.py", "Within-mid-IO IV-decile decomposition (persistent, stable-HQ, size-controlled)", "T5 tab:iv_within_mid_io + IA within-retail IV-decile"),
     ("v9_quadratic_io_stable_hq.py", "Quadratic-IO continuous-margin (interior IO* minimum) on stable-HQ", "T7 tab:form_grid + IA 20-bin quadratic"),
     ("v7_four_way_continuous.py",    "Four-way momentum x IV x literacy x IO continuous specification", "T7 tab:form_grid + IA 20-bin quadratic"),

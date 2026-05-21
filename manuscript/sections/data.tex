@@ -22,7 +22,7 @@ The persistent IO measure is each firm's time-mean institutional-ownership share
 
 \subsection{Descriptive statistics}
 
-Table~\ref{tab:descriptives} reports the cross-sectional distribution of the focal variables.
+Table~\ref{tab:descriptives} reports the cross-sectional distribution of the focal variables, and Figure~\ref{fig:literacy_map} maps the state literacy measure across the five NFCS waves. The cross-state ordering is stable over time (median Spearman rank correlation 0.71 across consecutive waves), so the panel-mean literacy that enters \texttt{literacy\_z} is not an artifact of any single wave.
 
 \begin{table}[t]
 \centering
@@ -73,3 +73,10 @@ Median within-state rank correlation across waves & 0.71 (Spearman) \\
 \medskip
 {\footnotesize\textit{Notes.} Idiosyncratic volatility is the standard deviation of daily Fama-French three-factor residuals over a rolling twelve-month window. Market equity is price times shares outstanding from CRSP, in billions of dollars. The NFCS Big Five share-correct score is the state-wave share of respondents answering the FINRA Big Five financial-literacy questions correctly. The within-state rank correlation across the five NFCS waves is the median Spearman correlation of state-wave ranks across consecutive waves (a measurement-stability statistic for the state literacy ordering).}
 \end{table}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/state_literacy_tilegram.png}
+\caption{State financial literacy across NFCS waves. Each tile is a state, shaded by the share of NFCS respondents answering at least three of the five Big-Five literacy questions correctly, for waves 2009, 2012, 2015, 2018, and 2021 and for the effective-sample-size-weighted panel mean (bottom right). High-literacy states (Minnesota, New Hampshire, Hawaii) and low-literacy states (Mississippi, West Virginia) hold their relative positions across waves.}
+\label{fig:literacy_map}
+\end{figure}
